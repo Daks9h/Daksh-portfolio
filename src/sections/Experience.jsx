@@ -8,15 +8,17 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 border-t border-white/[0.06] relative">
       <div className="container mx-auto px-4 md:px-8">
-        
+
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="section-title">Work Experience & Contributions</h2>
+          <h2 className="section-title">
+            WORK EXPERIENCE & CONTRIBUTIONS
+          </h2>
         </div>
 
         {/* Timeline Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* Left Column: Timeline Rail & Cards */}
           <div className="lg:col-span-8 space-y-5">
             {portfolioData.experience.map((exp, idx) => {
@@ -25,11 +27,10 @@ export default function Experience() {
                 <div
                   key={exp.id}
                   onClick={() => setActiveLog(idx)}
-                  className={`cyber-card p-6 rounded-xl border transition-all duration-200 cursor-pointer ${
-                    isSelected
+                  className={`cyber-card p-6 rounded-xl border transition-all duration-200 cursor-pointer ${isSelected
                       ? 'border-cyan-500/50 bg-[#111622] shadow-sm'
                       : 'border-white/[0.08] hover:border-white/[0.16] bg-[#0d111a]'
-                  }`}
+                    }`}
                 >
                   {/* Top Bar: Role ID & Period */}
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
@@ -44,11 +45,10 @@ export default function Experience() {
                     </div>
 
                     <span
-                      className={`text-[11px] font-mono px-2.5 py-0.5 rounded-full border ${
-                        exp.status === 'ACTIVE_OPERATION'
+                      className={`text-[11px] font-mono px-2.5 py-0.5 rounded-full border ${exp.status === 'ACTIVE_OPERATION'
                           ? 'bg-emerald-950/40 text-emerald-300 border-emerald-500/30'
                           : 'bg-slate-900 text-slate-400 border-white/[0.06]'
-                      }`}
+                        }`}
                     >
                       {exp.status === 'ACTIVE_OPERATION' ? 'Active Role' : 'Completed'}
                     </span>
@@ -88,7 +88,7 @@ export default function Experience() {
 
           {/* Right Column: Mission Control / Details */}
           <div className="lg:col-span-4 sticky top-24 space-y-6">
-            
+
             {/* Selected Role Inspector */}
             <div className="cyber-card p-6 rounded-xl border border-white/[0.08] shadow-xl">
               <div className="flex items-center gap-2 mb-4 text-cyan-400 font-mono text-xs font-semibold pb-2 border-b border-white/[0.06]">

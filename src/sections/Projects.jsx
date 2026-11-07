@@ -25,7 +25,9 @@ export default function Projects() {
         
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-12 gap-5">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title">
+            FEATURED PROJECTS
+          </h2>
 
           {/* Filter Navigation */}
           <div className="flex flex-wrap items-center justify-center gap-1.5 p-1 bg-[#111622] rounded-lg border border-white/[0.06]">

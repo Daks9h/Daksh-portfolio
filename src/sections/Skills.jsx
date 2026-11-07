@@ -27,7 +27,9 @@ export default function Skills() {
         
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="section-title">Technical Skills & Systems</h2>
+          <h2 className="section-title">
+            TECHNICAL SKILLS & SYSTEMS
+          </h2>
         </div>
 
         {/* Featured Core Proficiencies Grid - Static & Scan-friendly */}

@@ -40,7 +40,9 @@ export default function Contact() {
         
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title">
+            GET IN TOUCH
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

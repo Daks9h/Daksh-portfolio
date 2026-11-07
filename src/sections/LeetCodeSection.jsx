@@ -12,10 +12,12 @@ export default function LeetCodeSection() {
   return (
     <section className="py-20 border-t border-white/[0.06] relative">
       <div className="container mx-auto px-4 md:px-8">
-        
+
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-8 gap-3">
-          <h2 className="section-title">Algorithms & Problem Solving</h2>
+          <h2 className="section-title">
+            ALGORITHMS & PROBLEM SOLVING
+          </h2>
 
           <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-950/40 border border-emerald-500/25 rounded-full text-xs font-mono text-emerald-300">
             <Award className="w-4 h-4 text-emerald-400" />
@@ -69,7 +71,7 @@ export default function LeetCodeSection() {
         {/* Breakdown Card */}
         <div className="cyber-card p-6 sm:p-8 rounded-xl border border-white/[0.08]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
+
             {/* Left: Progress Bars */}
             <div className="lg:col-span-7 space-y-5">
               <h3 className="text-base font-semibold text-white">
@@ -104,7 +106,7 @@ export default function LeetCodeSection() {
                 <span>DSA_FOUNDATION</span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Strong focus on Arrays, Trees, Dynamic Programming, Graphs, and Hash Tables in Java and C++. 
+                Strong focus on Arrays, Trees, Dynamic Programming, Graphs, and Hash Tables in Java and C++.
                 Trained in algorithm analysis and asymptotic complexity optimization.
               </p>
               <div className="pt-2 border-t border-white/[0.06] text-xs font-mono text-slate-400 flex justify-between">

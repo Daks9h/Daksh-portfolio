@@ -19,16 +19,14 @@ export default function Hero() {
             {/* Display Headline & Subtitle Group */}
             <div className="space-y-3 sm:space-y-4 max-w-full overflow-hidden">
               <h1 
-                className="text-3xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[3.9rem] font-bold tracking-tight text-white leading-tight whitespace-nowrap drop-shadow-sm"
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[3.9rem] font-bold tracking-tight text-white leading-tight whitespace-nowrap drop-shadow-sm flex items-center"
                 style={{ fontFamily: "'Michroma', sans-serif" }}
               >
-                <span className="[-webkit-text-stroke:0.5px_rgba(255,255,255,0.85)]">
+                <span className="[-webkit-text-stroke:0.5px_rgba(255,255,255,0.85)] inline-block">
                   DAKSH
-                </span>{' '}
-                <span 
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 [-webkit-text-stroke:0.6px_rgba(34,211,238,0.8)] drop-shadow-[0_0_8px_rgba(6,182,212,0.4)]"
-                  style={{ fontFamily: "'Michroma', sans-serif" }}
-                >
+                </span>
+                <span className="inline-block w-3 sm:w-4" aria-hidden="true" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 [-webkit-text-stroke:0.6px_rgba(34,211,238,0.8)] drop-shadow-[0_0_8px_rgba(6,182,212,0.4)] inline-block">
                   LALWANI
                 </span>
               </h1>

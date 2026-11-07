@@ -51,10 +51,12 @@ export default function GitHubHeatmap() {
   return (
     <section className="py-20 border-t border-white/[0.06] relative">
       <div className="container mx-auto px-4 md:px-8">
-        
+
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-8 gap-4">
-          <h2 className="section-title">Open Source & GitHub Activity</h2>
+          <h2 className="section-title">
+            OPEN SOURCE & GITHUB ACTIVITY
+          </h2>
 
           <a
             href={portfolioData.personal.github}

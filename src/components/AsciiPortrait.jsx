@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Terminal } from 'lucide-react';
 
 export default function AsciiPortrait() {
   const canvasRef = useRef(null);
@@ -10,12 +11,12 @@ export default function AsciiPortrait() {
     if (!ctx) return;
 
     let animId;
-    const width = (canvas.width = 480);
-    const height = (canvas.height = 360);
+    const width = (canvas.width = 600);
+    const height = (canvas.height = 220);
 
     const chars = [' ', '.', ':', '-', '=', '+', '*', '%', '@', '#', '1', '0'];
-    const cols = 48;
-    const rows = 36;
+    const cols = 60;
+    const rows = 22;
     const cellW = width / cols;
     const cellH = height / rows;
 
@@ -35,7 +36,7 @@ export default function AsciiPortrait() {
       ctx.fillRect(0, 0, width, height);
 
       time += 0.04;
-      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.font = '9px "JetBrains Mono", monospace';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
@@ -51,18 +52,18 @@ export default function AsciiPortrait() {
           
           // Head / visor shape
           let intensity = 0;
-          const headRadius = 14;
+          const headRadius = 9;
           if (distFromCenter < headRadius) {
             intensity = 0.4 + Math.sin(r * 0.4 + time) * 0.2;
             
             // Visor band across eyes
-            if (r >= 13 && r <= 17 && c >= 14 && c <= 34) {
+            if (r >= 8 && r <= 11 && c >= 22 && c <= 38) {
               intensity = 0.9 + Math.sin(c * 0.3 - time * 2) * 0.3;
             }
             // Shoulders outline
-            if (r > 24) {
+            if (r > 15) {
               const shoulderDist = Math.abs(c - cx);
-              if (shoulderDist < (r - 20) * 1.5) {
+              if (shoulderDist < (r - 13) * 2) {
                 intensity = 0.5 + Math.cos(c * 0.2) * 0.2;
               }
             }
@@ -107,12 +108,12 @@ export default function AsciiPortrait() {
       ctx.fillStyle = '#38bdf8';
       ctx.font = '8px "JetBrains Mono", monospace';
       ctx.textAlign = 'left';
-      ctx.fillText('[AVATAR_RENDER: DAKSH.L]', 10, 16);
+      ctx.fillText('[AVATAR_RENDER: DAKSH.L]', 10, 14);
       ctx.textAlign = 'right';
-      ctx.fillText('STATUS: ONLINE', width - 10, 16);
-      ctx.fillText('MODE: BIO_NEURAL', width - 10, height - 10);
+      ctx.fillText('STATUS: ONLINE', width - 10, 14);
+      ctx.fillText('MODE: BIO_NEURAL', width - 10, height - 8);
       ctx.textAlign = 'left';
-      ctx.fillText('2026 // B.TECH AIML', 10, height - 10);
+      ctx.fillText('2026 // B.TECH AIML', 10, height - 8);
 
       animId = requestAnimationFrame(render);
     };
@@ -126,20 +127,28 @@ export default function AsciiPortrait() {
   }, []);
 
   return (
-    <div className="relative rounded-lg overflow-hidden border border-cyan-500/30 bg-slate-950/80 p-2 shadow-glow-cyan">
-      <div className="absolute top-0 left-0 right-0 h-6 bg-slate-900/90 border-b border-cyan-500/20 px-3 flex items-center justify-between z-10">
-        <div className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-red-500/80 inline-block"></span>
-          <span className="w-2 h-2 rounded-full bg-amber-500/80 inline-block"></span>
-          <span className="w-2 h-2 rounded-full bg-emerald-500/80 inline-block"></span>
-          <span className="text-[10px] font-mono text-slate-400 ml-2 tracking-wider">ASCII_BIO_SCAN.sys</span>
+    <div className="cyber-card p-6 rounded-xl border border-white/[0.08] flex flex-col justify-between h-full">
+      <div>
+        <div className="flex items-center justify-between mb-4 text-cyan-400 font-mono text-xs font-semibold tracking-wide">
+          <div className="flex items-center gap-2">
+            <Terminal className="w-4 h-4" />
+            <span>BIO_NEURAL_AVATAR</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+            <span className="text-[10px] font-mono text-cyan-400 font-semibold">LIVE_HUD</span>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
-          <span className="text-[9px] font-mono text-cyan-400 font-bold">LIVE_HUD</span>
+
+        <div className="relative rounded-lg overflow-hidden border border-cyan-500/25 bg-[#07090e]/80">
+          <canvas ref={canvasRef} className="w-full h-auto block cursor-crosshair" />
         </div>
       </div>
-      <canvas ref={canvasRef} className="w-full h-auto block rounded mt-6 cursor-crosshair" />
+
+      <div className="mt-6 pt-3 border-t border-white/[0.06] text-[11px] font-mono text-slate-500 flex justify-between">
+        <span>Status: Online</span>
+        <span>60 FPS Stream</span>
+      </div>
     </div>
   );
 }

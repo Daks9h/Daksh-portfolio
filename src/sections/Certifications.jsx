@@ -6,14 +6,16 @@ export default function Certifications() {
   return (
     <section className="py-20 border-t border-white/[0.06] relative">
       <div className="container mx-auto px-4 md:px-8">
-        
+
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="section-title">Certifications & Leadership</h2>
+          <h2 className="section-title">
+            CERTIFICATIONS & LEADERSHIP
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* Left: Certifications Grid */}
           <div className="lg:col-span-7 space-y-4">
             <h3 className="text-base font-semibold text-white">

@@ -1,57 +1,36 @@
-# Daksh Lalwani - Developer Portfolio
+# Daksh Lalwani - Portfolio
 
-> Full-Stack & Applied AI Engineer architecting end-to-end web platforms and retrieval-augmented generation pipelines.
+Personal portfolio website of Daksh Lalwani, Full Stack Developer. Built with React, Vite, and Tailwind CSS.
 
-[![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![React](https://img.shields.io/badge/React-19.x-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+## Features
 
----
+- Responsive layout across desktop, tablet, and mobile devices
+- Canvas-based background grid with dynamic flicker effect
+- Interactive components with custom border beam styling
+- Dedicated sections for projects, skills, experience, LeetCode metrics, and GitHub activity
+- Direct resume download and contact form
 
-## 🌟 Overview
+## Built With
 
-A high-performance, modern cyberpunk-inspired portfolio engineered with a focus on fluidity, responsiveness, and clean aesthetics.
+- React 19
+- Vite
+- Tailwind CSS
+- Lucide React
+- Canvas Confetti
 
-- **Atmospheric Background**: Canvas-based animated flickering grid powered by Magic UI.
-- **Precision Typography**: Geometric display typography (`Michroma` & `Science Gothic`) and clean technical monospace (`JetBrains Mono`).
-- **Interactive UI Chrome**: Custom cyberpunk chamfered action buttons, code architecture preview cards, and active navigation indicators.
-- **Component Showcase**:
-  - Hero Console & Verified Metrics
-  - Technical Background & Overview
-  - Interactive GitHub Activity & Telemetry
-  - Algorithms & LeetCode Metrics
-  - Work Experience & Contributions
-  - Skills & Systems Grid
-  - Featured Projects & Category Filter
-  - Certifications & Credentials
-  - Interactive Contact Terminal
-
----
-
-## 🛠️ Tech Stack
-
-- **Framework**: [React 19](https://react.dev/)
-- **Bundler & Dev Server**: [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components & FX**: Custom Magic UI Canvas Grid & Uiverse elements
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Fonts**: Michroma, Science Gothic, Sora, JetBrains Mono
-
----
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-Ensure you have [Node.js](https://nodejs.org/) (version 18 or newer) installed.
+- Node.js (version 18 or higher)
+- npm
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Daks9h/portfolio.git
-   cd portfolio
+   git clone https://github.com/Daks9h/Daksh-portfolio.git
+   cd Daksh-portfolio
    ```
 
 2. Install dependencies:
@@ -59,16 +38,16 @@ Ensure you have [Node.js](https://nodejs.org/) (version 18 or newer) installed.
    npm install
    ```
 
-3. Start the local development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
 
-4. Open your browser and navigate to `http://localhost:5173`.
+4. Open `http://localhost:5173` in your browser.
 
 ### Production Build
 
-To compile a minified, production-ready build:
+To create a production build:
 
 ```bash
 npm run build
@@ -80,52 +59,44 @@ To preview the production build locally:
 npm run preview
 ```
 
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```
-├── public/                 # Static assets & favicons
+├── public/
+│   ├── Daksh_Lalwani_Resume.pdf   # Resume PDF
+│   └── favicon.svg                # Favicon
 ├── src/
-│   ├── assets/             # Brand logos & vector graphics
-│   ├── components/         # Reusable UI components
-│   │   ├── magicui/        # Magic UI components (FlickeringGrid)
-│   │   ├── uiverse/        # Uiverse interactive elements
-│   │   ├── Navbar.jsx      # Navigation bar
-│   │   └── Footer.jsx      # Global footer
+│   ├── components/                # Shared UI elements
+│   │   ├── magicui/               # Flickering grid component
+│   │   ├── LaserButton.jsx        # Border beam action buttons
+│   │   ├── UiVerseButton.jsx      # Navigation buttons
+│   │   ├── Navbar.jsx             # Top navigation bar
+│   │   └── Footer.jsx             # Footer
 │   ├── data/
-│   │   └── portfolioData.js # Portfolio content, projects, and stats
-│   ├── sections/           # Section modules
-│   │   ├── Hero.jsx        # Hero console & introduction
-│   │   ├── About.jsx       # Profile & technical overview
-│   │   ├── Experience.jsx  # Career timeline & contributions
-│   │   ├── Skills.jsx      # Systems & technology stack
-│   │   ├── Projects.jsx    # Flagship projects & filter tabs
-│   │   ├── GitHubHeatmap.jsx # Contribution telemetry
-│   │   ├── LeetCodeSection.jsx # Problem-solving breakdown
-│   │   ├── Certifications.jsx # Credentials & leadership
-│   │   └── Contact.jsx     # Contact channels & form
-│   ├── App.jsx             # Main application layout
-│   ├── main.jsx            # React root entrypoint
-│   └── index.css           # Global Tailwind & design token styles
-├── index.html              # HTML shell & font definitions
-├── tailwind.config.js      # Tailwind configuration
-├── vite.config.js          # Vite build & alias settings
-└── package.json            # Project dependencies & scripts
+│   │   └── portfolioData.js       # Content, project details, and stats
+│   ├── sections/                  # Page sections
+│   │   ├── Hero.jsx               # Introduction and headline
+│   │   ├── About.jsx              # Background and academic metrics
+│   │   ├── GitHubHeatmap.jsx      # GitHub commit visualizer
+│   │   ├── LeetCodeSection.jsx    # Problem-solving statistics
+│   │   ├── Experience.jsx         # Work history and roles
+│   │   ├── Skills.jsx             # Technical competencies
+│   │   ├── Projects.jsx           # Featured projects
+│   │   ├── Certifications.jsx     # Certifications and leadership
+│   │   └── Contact.jsx            # Contact form
+│   ├── App.jsx                    # Root layout
+│   ├── index.css                  # Global styles and design tokens
+│   └── main.jsx                   # Application entry point
+├── package.json
+└── vite.config.js
 ```
 
----
+## Contact
 
-## 👤 Author
+- Email: dakshlalwani89@gmail.com
+- GitHub: https://github.com/Daks9h
+- LinkedIn: https://linkedin.com/in/dakshlalwani-374212308
 
-**Daksh Lalwani**
-- **GitHub**: [@Daks9h](https://github.com/Daks9h)
-- **LinkedIn**: [dakshlalwani-374212308](https://linkedin.com/in/dakshlalwani-374212308)
-- **Email**: dakshlalwani89@gmail.com
+## License
 
----
-
-## 📄 License
-
-This project is open-source under the [MIT License](LICENSE).
-
+This project is licensed under the MIT License.

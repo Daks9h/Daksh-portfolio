@@ -1,0 +1,208 @@
+/* From Uiverse.io - Precision Laser Button Synced with Obsidian/Cyan Theme */
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  max-width: 100%;
+  margin: 4px 8px;
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  min-width: 145px;
+  max-width: 100%;
+  height: 48px;
+  padding: 0 26px;
+  background: #0d111a;
+  color: #f8fafc;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.button:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 4px;
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #f8fafc;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.button:hover .text {
+  color: #a5f3fc;
+}
+
+/* Subtle dot matrix contained strictly inside the button bounds */
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(7, 9, 14, 0) 0,
+      rgba(7, 9, 14, 0) 30%,
+      rgba(13, 17, 26, 0.7) 70%
+    ),
+    radial-gradient(ellipse 100% 100%, rgba(6, 182, 212, 0.35), transparent);
+  background-size: 3px 3px, auto auto;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.button:hover::before {
+  opacity: 0.6;
+}
+
+/* Precision Laser Frame Lines - Perfectly Symmetric Corners */
+.a {
+  pointer-events: none;
+  position: absolute;
+}
+
+.a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(3px) url(#unopaq);
+  z-index: -1;
+}
+
+.a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(8px) url(#unopaq);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.button:hover .a::after {
+  opacity: 1;
+}
+
+/* Left vertical border */
+.l {
+  left: 0;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    #06b6d4 4px,
+    #38bdf8 50%,
+    #06b6d4 calc(100% - 4px),
+    transparent 100%
+  );
+}
+
+/* Right vertical border */
+.r {
+  right: 0;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    #06b6d4 4px,
+    #38bdf8 50%,
+    #06b6d4 calc(100% - 4px),
+    transparent 100%
+  );
+}
+
+/* Top horizontal border */
+.t {
+  top: 0;
+  left: -4px;
+  right: -4px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #06b6d4 4px,
+    #38bdf8 20%,
+    #ffffff 50%,
+    #38bdf8 80%,
+    #06b6d4 calc(100% - 4px),
+    transparent 100%
+  );
+}
+
+/* Bottom horizontal border */
+.b {
+  bottom: 0;
+  left: -4px;
+  right: -4px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #06b6d4 4px,
+    #38bdf8 20%,
+    #ffffff 50%,
+    #38bdf8 80%,
+    #06b6d4 calc(100% - 4px),
+    transparent 100%
+  );
+}
+
+/* Soft ambient glow on hover - seamless ellipse with zero rectangular boundary cut-offs */
+.backdrop {
+  position: absolute;
+  inset: -16px;
+  background: radial-gradient(
+    ellipse 85% 85% at 50% 50%,
+    rgba(6, 182, 212, 0.22) 0%,
+    rgba(6, 182, 212, 0.06) 45%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.button:hover ~ .backdrop,
+.wrapper:hover .backdrop {
+  opacity: 1;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .a::before,
+  .a::after {
+    filter: none !important;
+  }
+  .button:hover .a::after {
+    opacity: 0.5;
+  }
+}

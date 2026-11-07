@@ -27,6 +27,13 @@ export default function App() {
         />
       </div>
 
+      {/* Global SVG ColorMatrix Filter for Laser Glow Border Beams */}
+      <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }} aria-hidden="true">
+        <filter width="3000%" x="-1000%" height="3000%" y="-1000%" id="unopaq">
+          <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 3 0" />
+        </filter>
+      </svg>
+
       {/* Global Floating Navbar (Aligned to 85% width) */}
       <Navbar />
 

@@ -4,6 +4,7 @@ import {
   Atom, Server, Zap, Globe, FileCode, Flame, Terminal
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import LaserButton from '../components/LaserButton';
 
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState('ALL');
@@ -89,19 +90,17 @@ export default function Skills() {
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex flex-wrap gap-1.5 p-1 bg-[#111622] rounded-lg border border-white/[0.06]">
+            <div className="flex flex-wrap gap-2 p-1.5 bg-[#111622] rounded-lg border border-white/[0.06]">
               {categories.map((cat) => (
-                <button
+                <LaserButton
                   key={cat}
+                  size="sm"
+                  isActive={selectedCategory === cat}
+                  variant={selectedCategory === cat ? 'cyan' : 'white'}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
-                    selectedCategory === cat
-                      ? 'bg-cyan-400 text-[#07090e] shadow-sm'
-                      : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
-                  }`}
                 >
                   {cat}
-                </button>
+                </LaserButton>
               ))}
             </div>
           </div>

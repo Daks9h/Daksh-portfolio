@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUp, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { portfolioData } from '../data/portfolioData';
+import LaserButton from './LaserButton';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -61,13 +62,14 @@ export default function Footer() {
 
           {/* Back to Top */}
           <div>
-            <button
+            <LaserButton
               onClick={scrollToTop}
-              className="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-[#111622] hover:bg-slate-800 border border-white/[0.08] rounded-lg transition-all flex items-center gap-2"
+              size="sm"
+              variant="cyan"
             >
-              <ArrowUp className="w-3.5 h-3.5 text-cyan-400" />
+              <ArrowUp className="w-3.5 h-3.5" />
               <span>Back to top</span>
-            </button>
+            </LaserButton>
           </div>
 
         </div>

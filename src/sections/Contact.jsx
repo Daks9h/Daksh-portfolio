@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, ArrowUpRight } f
 import { GithubIcon, LinkedinIcon } from '../components/SocialIcons';
 import confetti from 'canvas-confetti';
 import { portfolioData } from '../data/portfolioData';
+import LaserButton from '../components/LaserButton';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -224,14 +225,16 @@ export default function Contact() {
                 )}
 
                 {/* Submit Button */}
-                <button
+                <LaserButton
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 text-sm font-semibold text-[#07090e] bg-cyan-400 hover:bg-cyan-300 disabled:bg-slate-700 rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm"
+                  size="lg"
+                  variant="cyan"
+                  className="w-full"
                 >
                   {isSubmitting ? (
                     <>
-                      <span className="w-4 h-4 border-2 border-[#07090e] border-t-transparent rounded-full animate-spin"></span>
+                      <span className="w-4 h-4 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></span>
                       <span>Sending message...</span>
                     </>
                   ) : (
@@ -240,7 +243,7 @@ export default function Contact() {
                       <span>Send Message</span>
                     </>
                   )}
-                </button>
+                </LaserButton>
 
               </form>
 

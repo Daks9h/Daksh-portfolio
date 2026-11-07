@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GitCommit, ExternalLink, Flame, GitFork, BookOpen } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import LaserButton from '../components/LaserButton';
 
 export default function GitHubHeatmap() {
   const [hoveredCell, setHoveredCell] = useState(null);
@@ -58,15 +59,16 @@ export default function GitHubHeatmap() {
             OPEN SOURCE & GITHUB ACTIVITY
           </h2>
 
-          <a
+          <LaserButton
             href={portfolioData.personal.github}
             target="_blank"
             rel="noreferrer"
-            className="px-4 py-2 text-xs font-semibold text-cyan-300 hover:text-white bg-[#111622] hover:bg-[#161c2c] border border-cyan-500/30 rounded-lg transition-all flex items-center gap-2"
+            size="md"
+            variant="cyan"
           >
             <span>View GitHub Profile</span>
             <ExternalLink className="w-3.5 h-3.5" />
-          </a>
+          </LaserButton>
         </div>
 
         {/* 4 Stat Badges Row */}

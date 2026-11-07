@@ -96,29 +96,18 @@ export default function Navbar() {
           {/* Desktop Left Navigation: HOME, ABOUT, EXPERIENCE */}
           <nav
             aria-label="Left Primary Navigation"
-            className="hidden lg:flex items-center gap-2.5 sm:gap-3.5"
+            className="hidden lg:flex items-center gap-4 lg:gap-5"
           >
             {leftNavItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
-                <div key={item.name} className="relative flex flex-col items-center">
-                  <a
-                    href={item.href}
-                    className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-mono transition-all duration-200 uppercase tracking-widest relative ${
-                      isActive
-                        ? 'border border-cyan-400/60 bg-cyan-950/50 text-cyan-200 font-bold shadow-[0_0_20px_rgba(6,182,212,0.4)]'
-                        : 'text-slate-400 hover:text-white hover:bg-white/[0.05] font-semibold'
-                    }`}
-                  >
-                    {item.name}
-                  </a>
-                  {isActive && (
-                    <span
-                      className="absolute -bottom-2 w-7 h-[3px] bg-cyan-400 rounded-full shadow-[0_0_12px_#22d3ee,0_0_20px_#06b6d4] pointer-events-none"
-                      aria-hidden="true"
-                    />
-                  )}
-                </div>
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`uiverse-nav-btn ${isActive ? 'is-active' : ''}`}
+                >
+                  {item.name}
+                </a>
               );
             })}
           </nav>
@@ -146,29 +135,18 @@ export default function Navbar() {
           {/* Desktop Right Navigation: SKILLS, PROJECTS, CONTACT */}
           <nav
             aria-label="Right Primary Navigation"
-            className="hidden lg:flex items-center gap-2.5 sm:gap-3.5"
+            className="hidden lg:flex items-center gap-4 lg:gap-5"
           >
             {rightNavItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
-                <div key={item.name} className="relative flex flex-col items-center">
-                  <a
-                    href={item.href}
-                    className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-mono transition-all duration-200 uppercase tracking-widest relative ${
-                      isActive
-                        ? 'border border-cyan-400/60 bg-cyan-950/50 text-cyan-200 font-bold shadow-[0_0_20px_rgba(6,182,212,0.4)]'
-                        : 'text-slate-400 hover:text-white hover:bg-white/[0.05] font-semibold'
-                    }`}
-                  >
-                    {item.name}
-                  </a>
-                  {isActive && (
-                    <span
-                      className="absolute -bottom-2 w-7 h-[3px] bg-cyan-400 rounded-full shadow-[0_0_12px_#22d3ee,0_0_20px_#06b6d4] pointer-events-none"
-                      aria-hidden="true"
-                    />
-                  )}
-                </div>
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`uiverse-nav-btn ${isActive ? 'is-active' : ''}`}
+                >
+                  {item.name}
+                </a>
               );
             })}
           </nav>
@@ -218,14 +196,10 @@ export default function Navbar() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`min-h-[48px] text-xs sm:text-sm font-mono font-medium px-4 rounded-xl flex items-center justify-between transition-colors uppercase tracking-wider ${
-                      isActive
-                        ? 'bg-cyan-500/15 text-cyan-300 font-bold border border-cyan-500/25'
-                        : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
-                    }`}
+                    className={`uiverse-nav-btn w-full !justify-between !py-3 ${isActive ? 'is-active' : ''}`}
                   >
                     <span>{item.name}</span>
-                    <span className="text-xs font-mono text-slate-500">{item.href}</span>
+                    <span className="text-[11px] font-mono opacity-60">{item.href}</span>
                   </a>
                 );
               })}

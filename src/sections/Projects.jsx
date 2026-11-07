@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ExternalLink, ChevronDown, ChevronUp, Layers, ArrowUpRight } from 'lucide-react';
 import { GithubIcon } from '../components/SocialIcons';
 import { portfolioData } from '../data/portfolioData';
+import LaserButton from '../components/LaserButton';
 
 export default function Projects() {
   const [filter, setFilter] = useState('ALL');
@@ -30,19 +31,17 @@ export default function Projects() {
           </h2>
 
           {/* Filter Navigation */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 p-1 bg-[#111622] rounded-lg border border-white/[0.06]">
+          <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 bg-[#111622] rounded-lg border border-white/[0.06]">
             {['ALL', 'AI', 'FULLSTACK'].map((tab) => (
-              <button
+              <LaserButton
                 key={tab}
+                size="sm"
+                isActive={filter === tab}
+                variant={filter === tab ? 'cyan' : 'white'}
                 onClick={() => setFilter(tab)}
-                className={`px-3.5 py-1.5 text-xs font-semibold rounded-md transition-all ${
-                  filter === tab
-                    ? 'bg-cyan-400 text-[#07090e] shadow-sm'
-                    : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
-                }`}
               >
                 {tab === 'AI' ? 'AI / RAG' : tab === 'FULLSTACK' ? 'Full Stack' : 'All Projects'}
-              </button>
+              </LaserButton>
             ))}
           </div>
         </div>
@@ -105,16 +104,18 @@ export default function Projects() {
 
                   {/* Architecture Workflow Collapsible */}
                   <div className="border-t border-white/[0.06] pt-3">
-                    <button
+                    <LaserButton
                       onClick={() => toggleWorkflow(proj.id)}
-                      className="w-full py-2 px-3 bg-[#111622] hover:bg-slate-800 border border-white/[0.06] hover:border-cyan-500/30 rounded-lg text-xs font-mono text-cyan-300 flex items-center justify-between transition-all"
+                      size="sm"
+                      variant="cyan"
+                      className="w-full !justify-between"
                     >
                       <span className="font-medium flex items-center gap-2">
-                        <Layers className="w-3.5 h-3.5 text-cyan-400" />
+                        <Layers className="w-3.5 h-3.5" />
                         {isWorkflowOpen ? 'Hide Architecture Pipeline' : 'View Architecture Pipeline'}
                       </span>
                       {isWorkflowOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                    </button>
+                    </LaserButton>
 
                     {isWorkflowOpen && (
                       <div className="mt-3 p-3.5 bg-[#07090e] rounded-lg border border-white/[0.06] space-y-2.5 text-xs font-mono animate-fadeIn">
@@ -143,15 +144,16 @@ export default function Projects() {
                       <span>Source Code</span>
                     </a>
 
-                    <a
+                    <LaserButton
                       href={proj.liveDemo}
                       target="_blank"
                       rel="noreferrer"
-                      className="px-3.5 py-1.5 text-xs font-semibold text-[#07090e] bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-all flex items-center gap-1"
+                      size="sm"
+                      variant="white"
                     >
                       <span>Preview</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
-                    </a>
+                    </LaserButton>
                   </div>
 
                 </div>

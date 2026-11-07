@@ -150,3 +150,353 @@ h1, h2, h3, .section-title, .heading-font, .font-science, .font-gothic, .font-wa
     scroll-behavior: auto !important;
   }
 }
+
+/* ======================================================== */
+/* UI Verse Cyber Grid Button Component                      */
+/* ======================================================== */
+.uiverse-button,
+.uiverse-btn {
+  --main-color: rgb(46, 213, 115);
+  --main-bg-color: rgba(46, 213, 116, 0.36);
+  --pattern-color: rgba(46, 213, 116, 0.073);
+
+  filter: hue-rotate(0deg);
+
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--main-color);
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(0, 0, 0, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+  background-size:
+    cover,
+    15px 15px,
+    15px 15px;
+  background-position:
+    center center,
+    center center,
+    center center;
+  border-image: radial-gradient(
+      circle,
+      var(--main-color) 0%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    1;
+  border-width: 1px 0 1px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.85rem;
+  transition: background-size 0.2s ease-in-out, filter 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.uiverse-button:hover,
+.uiverse-btn:hover {
+  background-size:
+    cover,
+    10px 10px,
+    10px 10px;
+}
+
+.uiverse-button:active,
+.uiverse-btn:active {
+  filter: hue-rotate(250deg);
+}
+
+.uiverse-button:disabled,
+.uiverse-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Color Variant: Cyan */
+.uiverse-button--cyan {
+  --main-color: rgb(6, 182, 212);
+  --main-bg-color: rgba(6, 182, 212, 0.36);
+  --pattern-color: rgba(6, 182, 212, 0.08);
+}
+
+/* Sizing Modifiers */
+.uiverse-btn-lg {
+  padding: 0.9rem 2.25rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.3rem;
+}
+
+.uiverse-btn-md {
+  padding: 0.65rem 1.6rem;
+  font-size: 0.825rem;
+  letter-spacing: 0.18rem;
+}
+
+.uiverse-btn-sm {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.725rem;
+  letter-spacing: 0.12rem;
+}
+
+.uiverse-button.is-active {
+  --main-color: #22d3ee;
+  --main-bg-color: rgba(34, 211, 238, 0.5);
+  --pattern-color: rgba(34, 211, 238, 0.15);
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.3);
+}
+
+/* ======================================================== */
+/* UI Verse Navbar Navigation Button                         */
+/* ======================================================== */
+.uiverse-nav-btn {
+  --main-color: rgb(46, 213, 115);
+  --main-bg-color: rgba(46, 213, 116, 0.22);
+  --pattern-color: rgba(46, 213, 116, 0.08);
+
+  filter: hue-rotate(0deg);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.08em; /* Compact letter space */
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--main-color);
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(0, 0, 0, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+  background-size:
+    cover,
+    14px 14px,
+    14px 14px;
+  background-position:
+    center center,
+    center center,
+    center center;
+  border-image: radial-gradient(
+      circle,
+      var(--main-color) 0%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    1;
+  border-width: 1px 0 1px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.15rem;
+  transition: background-size 0.2s ease-in-out, filter 0.2s ease-in-out, transform 0.15s ease-in-out;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.uiverse-nav-btn:hover {
+  background-size:
+    cover,
+    9px 9px,
+    9px 9px;
+  color: #fff;
+}
+
+.uiverse-nav-btn:active {
+  filter: hue-rotate(250deg);
+}
+
+.uiverse-nav-btn.is-active {
+  --main-color: rgb(34, 211, 238);
+  --main-bg-color: rgba(6, 182, 212, 0.45);
+  --pattern-color: rgba(6, 182, 212, 0.14);
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.4);
+  color: #fff;
+}
+
+/* ======================================================== */
+/* UI Verse Laser Glow Border Beam Button                    */
+/* ======================================================== */
+.laser-button {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: #0d111a;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-sizing: border-box;
+  overflow: visible;
+  padding: 0.75rem 1.75rem;
+  margin: 6px 4px;
+}
+
+.laser-button .text {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.laser-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0) 20%,
+      rgba(17, 17, 17, 0.67) 50%
+    ),
+    radial-gradient(ellipse 100% 100%, #ffffff, rgba(255, 255, 255, 0));
+  background-size:
+    3px 3px,
+    auto auto;
+  transition: 0.3s;
+  z-index: 0;
+}
+
+.laser-button:hover::before {
+  opacity: 0.25;
+}
+
+.laser-button .a {
+  pointer-events: none;
+  position: absolute;
+  --w: 2px;
+  --t: -30px;
+  --s: calc(var(--t) * -1);
+  --e: calc(100% + var(--t));
+  --g: rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2) var(--s), rgba(255, 255, 255, 0.65) var(--s), #ffffff, rgba(255, 255, 255, 0.65) var(--e),
+    rgba(255, 255, 255, 0.2) var(--e), rgba(255, 255, 255, 0);
+}
+
+.laser-button .a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(4px) url(#unopaq);
+  z-index: -2;
+}
+
+.laser-button .a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(10px) url(#unopaq);
+  opacity: 0;
+  z-index: -2;
+  transition: opacity 0.3s ease;
+}
+
+.laser-button:hover .a::after {
+  opacity: 1;
+}
+
+.laser-button .l {
+  left: -2px;
+}
+
+.laser-button .r {
+  right: -2px;
+}
+
+.laser-button .l,
+.laser-button .r {
+  background: linear-gradient(var(--g));
+  top: var(--t);
+  bottom: var(--t);
+  width: var(--w);
+}
+
+.laser-button .t {
+  top: -2px;
+}
+
+.laser-button .b {
+  bottom: -2px;
+}
+
+.laser-button .t,
+.laser-button .b {
+  background: linear-gradient(90deg, var(--g));
+  left: var(--t);
+  right: var(--t);
+  height: var(--w);
+}
+
+/* Laser Variants */
+.laser-button--cyan .a {
+  --g: rgba(6, 182, 212, 0), rgba(6, 182, 212, 0.25) var(--s), rgba(6, 182, 212, 0.8) var(--s), #38bdf8, rgba(6, 182, 212, 0.8) var(--e),
+    rgba(6, 182, 212, 0.25) var(--e), rgba(6, 182, 212, 0);
+}
+.laser-button--cyan {
+  color: #a5f3fc;
+  background: #090e18;
+}
+.laser-button--cyan:hover {
+  color: #ffffff;
+}
+
+.laser-button--emerald .a {
+  --g: rgba(46, 213, 115, 0), rgba(46, 213, 115, 0.25) var(--s), rgba(46, 213, 115, 0.8) var(--s), #4ade80, rgba(46, 213, 115, 0.8) var(--e),
+    rgba(46, 213, 115, 0.25) var(--e), rgba(46, 213, 115, 0);
+}
+.laser-button--emerald {
+  color: #86efac;
+  background: #08110d;
+}
+.laser-button--emerald:hover {
+  color: #ffffff;
+}
+
+/* Sizing Modifiers for Laser Button */
+.laser-button-lg {
+  padding: 0.95rem 2.25rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+}
+
+.laser-button-md {
+  padding: 0.65rem 1.6rem;
+  font-size: 0.825rem;
+  letter-spacing: 0.15rem;
+}
+
+.laser-button-sm {
+  padding: 0.4rem 1rem;
+  font-size: 0.725rem;
+  letter-spacing: 0.1rem;
+}
+
+.laser-button.is-active {
+  background: #111a2e;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+}
+
+.laser-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

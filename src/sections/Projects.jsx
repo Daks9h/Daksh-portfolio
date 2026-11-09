@@ -21,7 +21,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-24 border-t border-white/[0.06] relative">
+    <section id="projects" className="pt-4 pb-16 relative">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Header */}

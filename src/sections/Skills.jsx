@@ -22,7 +22,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 border-t border-white/[0.06] relative overflow-hidden">
+    <section id="skills" className="pt-4 pb-16 relative overflow-hidden">
 
       <div className="container mx-auto px-4 md:px-8">
         

@@ -20,7 +20,7 @@ export const portfolioData = {
     focus: "Full-Stack Web Dev & Applied AI/RAG",
     availability: "Full Time / Internship",
     summary: "B.Tech Computer Science (AIML) student at LNCT Bhopal who builds high-performance, full-stack web applications with the MERN stack and Python/FastAPI. Architected an end-to-end RAG study assistant with a Manifest V3 Chrome extension and a production role-based rental marketplace with JWT authentication. Experienced across startups, open-source programs, and backed by a strong Java & DSA foundation.",
-    mission: "Engineering resilient, high-fidelity digital solutions with an emphasis on architectural clarity, database indexing, and user-centric fluidity. Bridging the gap between scalable full-stack software and cutting-edge retrieval-augmented generation pipelines.",
+    mission: "I build fast, reliable web applications and connect them with practical AI tools. My focus is writing clean code, building secure backends, and creating smooth user experiences.",
   },
 
   stats: {

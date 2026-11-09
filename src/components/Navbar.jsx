@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ activePage = 'home', onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
   const menuRef = useRef(null);
   const triggerRef = useRef(null);
 
@@ -22,33 +21,13 @@ export default function Navbar() {
 
   const allNavItems = [...leftNavItems, ...rightNavItems];
 
-  // 1. High-Performance IntersectionObserver for Active Section Tracking
-  useEffect(() => {
-    const sectionIds = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
-    
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -55% 0px',
-      threshold: 0,
-    };
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    onNavigate?.(id);
+    setMobileMenuOpen(false);
+  };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    }, observerOptions);
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  // 2. Passive Window Scroll Listener for Nav Scrolled Chrome (Zero Layout Thrashing)
+  // Passive Window Scroll Listener for Nav Scrolled Chrome
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 24);
@@ -60,7 +39,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // 3. Accessibility: Close on Escape key & manage body scroll lock
+  // Accessibility: Close on Escape key & manage body scroll lock
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && mobileMenuOpen) {
@@ -99,11 +78,12 @@ export default function Navbar() {
             className="hidden lg:flex items-center gap-4 lg:gap-5"
           >
             {leftNavItems.map((item) => {
-              const isActive = activeSection === item.id;
+              const isActive = activePage === item.id;
               return (
                 <a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.id)}
                   className={`uiverse-nav-btn ${isActive ? 'is-active' : ''}`}
                 >
                   {item.name}
@@ -115,6 +95,7 @@ export default function Navbar() {
           {/* Centered Brand Mark [[DAKSH.L]] */}
           <a
             href="#home"
+            onClick={(e) => handleNavClick(e, 'home')}
             className="flex items-center group focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-full py-2 px-5 bg-[#07090e]/90 border border-white/[0.08] hover:border-cyan-500/50 transition-all duration-200 shadow-xl shadow-black/50"
             aria-label="Daksh Lalwani Home"
           >
@@ -138,11 +119,12 @@ export default function Navbar() {
             className="hidden lg:flex items-center gap-4 lg:gap-5"
           >
             {rightNavItems.map((item) => {
-              const isActive = activeSection === item.id;
+              const isActive = activePage === item.id;
               return (
                 <a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.id)}
                   className={`uiverse-nav-btn ${isActive ? 'is-active' : ''}`}
                 >
                   {item.name}
@@ -190,12 +172,12 @@ export default function Navbar() {
               className="relative z-50 lg:hidden mt-3 bg-[#0d111a]/95 backdrop-blur-2xl border border-white/[0.08] rounded-2xl p-4 shadow-2xl shadow-black/80 flex flex-col gap-2 animate-in fade-in zoom-in-95 duration-200"
             >
               {allNavItems.map((item) => {
-                const isActive = activeSection === item.id;
+                const isActive = activePage === item.id;
                 return (
                   <a
                     key={item.name}
                     href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, item.id)}
                     className={`uiverse-nav-btn w-full !justify-between !py-3 ${isActive ? 'is-active' : ''}`}
                   >
                     <span>{item.name}</span>

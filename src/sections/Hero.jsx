@@ -2,12 +2,12 @@ import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 import LaserButton from '../components/LaserButton';
 
-export default function Hero() {
+export default function Hero({ onNavigate }) {
   return (
     <section
       id="home"
       aria-label="Personal Introduction and Architecture Console"
-      className="relative min-h-screen lg:h-screen lg:max-h-screen flex items-center justify-start pt-24 pb-8 sm:pt-28 sm:pb-10 lg:pt-24 lg:pb-8 overflow-hidden"
+      className="relative min-h-[calc(100vh-120px)] flex flex-col justify-center items-start pt-4 pb-12 overflow-hidden"
     >
       <div className="w-full max-w-5xl">
         <div className="w-full min-w-0 flex flex-col items-start space-y-6 sm:space-y-7">
@@ -76,6 +76,10 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-4 pl-3 sm:pl-4 w-full sm:w-auto">
             <LaserButton
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate?.('contact');
+              }}
               size="lg"
               variant="cyan"
               className="ml-2 sm:ml-3"

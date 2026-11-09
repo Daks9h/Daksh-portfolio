@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, CheckCircle2, TrendingUp, Award, Zap } from 'lucide-react';
+import { Code2, CheckCircle2, TrendingUp, Zap } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function LeetCodeSection() {
@@ -14,15 +14,10 @@ export default function LeetCodeSection() {
       <div className="container mx-auto px-4 md:px-8">
 
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-8 gap-3">
+        <div className="mb-8 text-center">
           <h2 className="section-title">
             ALGORITHMS & PROBLEM SOLVING
           </h2>
-
-          <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-950/40 border border-emerald-500/25 rounded-full text-xs font-mono text-emerald-300">
-            <Award className="w-4 h-4 text-emerald-400" />
-            <span>NPTEL Java Elite Certified</span>
-          </div>
         </div>
 
         {/* 4 Stat Badges */}

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Briefcase, Calendar, CheckCircle2, ChevronRight, Terminal } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export default function Experience() {
+export default function Experience({ onNavigate }) {
   const [activeLog, setActiveLog] = useState(0);
 
   return (
-    <section id="experience" className="py-24 border-t border-white/[0.06] relative">
+    <section id="experience" className="pt-4 pb-16 relative">
       <div className="container mx-auto px-4 md:px-8">
 
         {/* Header */}
@@ -142,6 +142,10 @@ export default function Experience() {
               </p>
               <a
                 href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate?.('contact');
+                }}
                 className="inline-block pt-1 text-cyan-400 hover:text-cyan-300 font-semibold underline underline-offset-4"
               >
                 Send a message →

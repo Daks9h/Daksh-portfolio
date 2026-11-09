@@ -12,11 +12,11 @@ export default function AsciiPortrait() {
 
     let animId;
     const width = (canvas.width = 600);
-    const height = (canvas.height = 220);
+    const height = (canvas.height = 240);
 
     const chars = [' ', '.', ':', '-', '=', '+', '*', '%', '@', '#', '1', '0'];
     const cols = 60;
-    const rows = 22;
+    const rows = 24;
     const cellW = width / cols;
     const cellH = height / rows;
 
@@ -127,27 +127,22 @@ export default function AsciiPortrait() {
   }, []);
 
   return (
-    <div className="cyber-card p-6 rounded-xl border border-white/[0.08] flex flex-col justify-between h-full">
-      <div>
-        <div className="flex items-center justify-between mb-4 text-cyan-400 font-mono text-xs font-semibold tracking-wide">
-          <div className="flex items-center gap-2">
-            <Terminal className="w-4 h-4" />
-            <span>BIO_NEURAL_AVATAR</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
-            <span className="text-[10px] font-mono text-cyan-400 font-semibold">LIVE_HUD</span>
-          </div>
+    <div className="cyber-card p-7 sm:p-8 rounded-sm border border-white/[0.08] flex flex-col justify-between h-full min-h-[340px] relative group">
+      {/* Techno Corners */}
+      <span className="techno-corner-tl" aria-hidden="true" />
+      <span className="techno-corner-tr" aria-hidden="true" />
+      <span className="techno-corner-bl" aria-hidden="true" />
+      <span className="techno-corner-br" aria-hidden="true" />
+
+      <div className="flex-1 flex flex-col justify-between">
+        <div className="flex items-center gap-2 mb-4 text-cyan-400 font-mono text-xs font-semibold tracking-wide">
+          <Terminal className="w-4 h-4" />
+          <span>BIO_NEURAL_AVATAR</span>
         </div>
 
-        <div className="relative rounded-lg overflow-hidden border border-cyan-500/25 bg-[#07090e]/80">
+        <div className="relative rounded-sm overflow-hidden border border-cyan-500/25 bg-[#07090e]/80 flex-1 flex items-center justify-center my-1">
           <canvas ref={canvasRef} className="w-full h-auto block cursor-crosshair" />
         </div>
-      </div>
-
-      <div className="mt-6 pt-3 border-t border-white/[0.06] text-[11px] font-mono text-slate-500 flex justify-between">
-        <span>Status: Online</span>
-        <span>60 FPS Stream</span>
       </div>
     </div>
   );

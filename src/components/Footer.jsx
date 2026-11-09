@@ -17,8 +17,7 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="text-center md:text-left">
-            <div className="text-xl font-bold tracking-tight text-white flex items-center justify-center md:justify-start gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+            <div className="text-xl font-bold tracking-tight text-white flex items-center justify-center md:justify-start">
               <span>{portfolioData.personal.name}</span>
             </div>
             <p className="text-xs font-mono text-cyan-400 mt-1 uppercase tracking-wide">
@@ -76,13 +75,12 @@ export default function Footer() {
 
         {/* Lower Row */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            <span>All systems operational • Bhopal, MP, India</span>
+          <div>
+            <span>Bhopal, MP, India</span>
           </div>
 
           <div className="text-center sm:text-right">
-            © {new Date().getFullYear()} Daksh Lalwani. Crafted with precision.
+            © {new Date().getFullYear()} Daksh Lalwani • INTERACTIVE ML CONSOLE
           </div>
         </div>
 

@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
 
           <div className="text-center sm:text-right">
-            © {new Date().getFullYear()} Daksh Lalwani • INTERACTIVE ML CONSOLE
+            © {new Date().getFullYear()} Daksh Lalwani.
           </div>
         </div>
 

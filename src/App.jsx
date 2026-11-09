@@ -29,8 +29,7 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const page = getPageFromHash();
-      setActivePage(page);
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      setActivePage((prev) => (prev === page ? prev : page));
     };
 
     window.addEventListener('hashchange', handleHashChange);
@@ -39,8 +38,10 @@ export default function App() {
 
   const handleNavigate = (page) => {
     if (VALID_PAGES.includes(page)) {
+      if (window.location.hash !== `#${page}`) {
+        window.location.hash = page;
+      }
       setActivePage(page);
-      window.location.hash = page;
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
   };

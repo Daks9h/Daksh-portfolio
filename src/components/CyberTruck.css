@@ -1,0 +1,65 @@
+/* ==========================================================================
+   CyberTruck & High-Performance Drive-By Transition Styles
+   Fully hardware-accelerated SVG vector motion (60–120 FPS)
+   ========================================================================== */
+
+.cybertruck-container {
+  display: inline-block;
+  width: var(--truck-width, 220px);
+  will-change: transform;
+}
+
+/* Hardware-accelerated continuous turbine wheel rotation */
+.cybertruck-wheel {
+  animation: cyberWheelSpin 0.32s infinite linear;
+  will-change: transform;
+}
+
+@keyframes cyberWheelSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Vertical Photon Laser Line trailing at the rear bumper */
+.truck-laser-line {
+  will-change: transform;
+}
+
+/* Glowing neon cyan road beam along bottom edge */
+.truck-road-track {
+  animation: cyberRoadFade 1.25s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes cyberRoadFade {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  15% {
+    opacity: 0.9;
+    transform: scaleX(1);
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Accessibility: Strict prefers-reduced-motion honor */
+@media (prefers-reduced-motion: reduce) {
+  .truck-laser-line,
+  .truck-road-track,
+  .cybertruck-container {
+    display: none !important;
+  }
+  .cybertruck-wheel {
+    animation: none !important;
+  }
+}

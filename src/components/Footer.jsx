@@ -10,8 +10,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/[0.06] pt-16 pb-12 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <footer className="relative border-t border-white/[0.06] pt-12 sm:pt-16 pb-8 sm:pb-12 overflow-hidden">
+      <div className="container mx-auto px-2 sm:px-4 md:px-8 relative z-10">
         
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/[0.06]">
           

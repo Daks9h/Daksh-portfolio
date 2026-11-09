@@ -51,7 +51,7 @@ export default function Contact() {
           {/* Left Column: Direct Communication Channels & Map */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="cyber-card p-6 rounded-xl border border-white/[0.08] space-y-4">
+            <div className="cyber-card p-4 sm:p-6 rounded-xl border border-white/[0.08] space-y-4">
               <h3 className="text-base font-semibold text-white pb-2 border-b border-white/[0.06]">
                 Direct Contact Channels
               </h3>
@@ -164,7 +164,7 @@ export default function Contact() {
 
           {/* Right Column: Form */}
           <div className="lg:col-span-7">
-            <div className="cyber-card p-6 md:p-8 rounded-xl border border-white/[0.08] shadow-2xl relative">
+            <div className="cyber-card p-4 sm:p-6 md:p-8 rounded-xl border border-white/[0.08] shadow-2xl relative">
               <h3 className="text-lg font-bold text-white mb-6 pb-3 border-b border-white/[0.06]">
                 Send a Message
               </h3>

@@ -38,11 +38,11 @@ export default function Skills() {
           <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
             Core Architectural Competencies
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+          <div className="grid grid-cols-2 min-[480px]:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3.5">
             {portfolioData.skills.marquee.map((skill, idx) => (
               <div
                 key={idx}
-                className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors flex flex-col justify-between group shadow-md"
+                className="p-3 sm:p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors flex flex-col justify-between group shadow-md"
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[10px] font-mono tracking-wider text-cyan-400 uppercase">
@@ -53,12 +53,12 @@ export default function Skills() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2.5 my-1">
+                <div className="flex items-center gap-2 sm:gap-2.5 my-1">
                   <div
                     style={{ color: skill.color }}
-                    className="p-1.5 rounded-lg bg-[#111622] border border-white/[0.06] group-hover:scale-105 transition-transform shrink-0"
+                    className="p-1 sm:p-1.5 rounded-lg bg-[#111622] border border-white/[0.06] group-hover:scale-105 transition-transform shrink-0"
                   >
-                    <Atom className="w-4 h-4" />
+                    <Atom className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <h4 className="text-xs font-semibold text-white group-hover:text-cyan-300 transition-colors truncate">
                     {skill.name}
@@ -77,20 +77,20 @@ export default function Skills() {
         </div>
 
         {/* Infrastructure Tools Grid Section */}
-        <div className="cyber-card p-6 sm:p-8 rounded-xl border border-white/[0.08]">
+        <div className="cyber-card p-4 sm:p-8 rounded-xl border border-white/[0.08]">
           
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 sm:mb-8">
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
                 Tooling & Technologies Inventory
               </h3>
-              <p className="text-sm text-slate-400 mt-1">
+              <p className="text-xs sm:text-sm text-slate-400 mt-1">
                 Filter by stack layer or view comprehensive competency index
               </p>
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex flex-wrap gap-2 p-1.5 bg-[#111622] rounded-lg border border-white/[0.06]">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 p-1 sm:p-1.5 bg-[#111622] rounded-lg border border-white/[0.06]">
               {categories.map((cat) => (
                 <LaserButton
                   key={cat}

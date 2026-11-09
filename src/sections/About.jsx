@@ -21,7 +21,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full">
             
             {/* Card 1: Core Specifications */}
-            <div className="cyber-card p-6 sm:p-7 rounded-sm border border-white/[0.08] flex flex-col justify-between relative group">
+            <div className="cyber-card p-4 sm:p-7 rounded-sm border border-white/[0.08] flex flex-col justify-between relative group">
               {/* Techno Corners */}
               <span className="techno-corner-tl" aria-hidden="true" />
               <span className="techno-corner-tr" aria-hidden="true" />
@@ -37,7 +37,7 @@ export default function About() {
               {/* Structured Specifications Grid */}
               <div className="flex flex-col gap-y-3.5">
                 {/* Row 1 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
                   <div className="flex items-center justify-between">
                     <span className="text-slate-400">Role</span>
                     <span className="text-white font-medium text-right">FULL-STACK DEVELOPER</span>
@@ -49,7 +49,7 @@ export default function About() {
                 </div>
 
                 {/* Row 2 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
                   <div className="flex items-center justify-between">
                     <span className="text-slate-400">Status</span>
                     <span className="text-emerald-400 font-medium text-right flex items-center gap-1.5">
@@ -64,7 +64,7 @@ export default function About() {
                 </div>
 
                 {/* Row 3 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
                   <div className="flex items-center justify-between">
                     <span className="text-slate-400">Core Focus</span>
                     <span className="text-cyan-400 font-medium text-right">Full-Stack & Applied AI</span>
@@ -76,7 +76,7 @@ export default function About() {
                 </div>
 
                 {/* Row 4 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 pt-0.5 text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pt-0.5 text-xs sm:text-sm">
                   <div className="flex items-center justify-between">
                     <span className="text-slate-400">Primary Stack</span>
                     <span className="text-slate-200 text-right">React, Node, FastAPI</span>
@@ -90,7 +90,7 @@ export default function About() {
             </div>
 
             {/* Card 2: Academic Record */}
-            <div className="cyber-card p-6 sm:p-7 rounded-sm border border-white/[0.08] flex flex-col justify-between relative group">
+            <div className="cyber-card p-4 sm:p-7 rounded-sm border border-white/[0.08] flex flex-col justify-between relative group">
               {/* Techno Corners */}
               <span className="techno-corner-tl" aria-hidden="true" />
               <span className="techno-corner-tr" aria-hidden="true" />
@@ -106,7 +106,7 @@ export default function About() {
               {/* Structured Academic Grid */}
               <div className="flex flex-col gap-y-3.5">
                 {/* Row 1 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
                   <div className="flex items-center justify-between">
                     <span className="text-slate-400">Degree</span>
                     <span className="text-white font-medium text-right">B.Tech CSE (AIML)</span>
@@ -118,7 +118,7 @@ export default function About() {
                 </div>
 
                 {/* Row 2 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
                   <div className="flex items-center justify-between">
                     <span className="text-slate-400">Cumulative CGPA</span>
                     <span className="text-emerald-400 font-bold text-sm text-right">8.31 / 10.0</span>
@@ -130,7 +130,7 @@ export default function About() {
                 </div>
 
                 {/* Row 3 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pb-3 border-b border-white/[0.06] text-xs sm:text-sm">
                   <div className="flex items-center justify-between">
                     <span className="text-slate-400">Tenure</span>
                     <span className="text-slate-200 text-right">Sep 2024 – 2028</span>
@@ -142,7 +142,7 @@ export default function About() {
                 </div>
 
                 {/* Row 4 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 pt-0.5 text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pt-0.5 text-xs sm:text-sm">
                   <div className="flex items-center justify-between">
                     <span className="text-slate-400">Clubs</span>
                     <span className="text-slate-200 text-right">E-Cell & Ensemble</span>
@@ -160,7 +160,7 @@ export default function About() {
           {/* Row 2: The third card below them in center */}
           <div className="w-full max-w-4xl mx-auto">
             {/* Card 3: Engineering Approach */}
-            <div className="cyber-card p-6 sm:p-7 rounded-sm border border-white/[0.08] relative group">
+            <div className="cyber-card p-4 sm:p-7 rounded-sm border border-white/[0.08] relative group">
               {/* Techno Corners */}
               <span className="techno-corner-tl" aria-hidden="true" />
               <span className="techno-corner-tr" aria-hidden="true" />

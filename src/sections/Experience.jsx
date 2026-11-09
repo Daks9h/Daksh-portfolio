@@ -17,17 +17,17 @@ export default function Experience({ onNavigate }) {
         </div>
 
         {/* Timeline Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
 
           {/* Left Column: Timeline Rail & Cards */}
-          <div className="lg:col-span-8 space-y-5">
+          <div className="lg:col-span-8 space-y-4 sm:space-y-5">
             {portfolioData.experience.map((exp, idx) => {
               const isSelected = activeLog === idx;
               return (
                 <div
                   key={exp.id}
                   onClick={() => setActiveLog(idx)}
-                  className={`cyber-card p-6 rounded-xl border transition-all duration-200 cursor-pointer ${isSelected
+                  className={`cyber-card p-4 sm:p-6 rounded-xl border transition-all duration-200 cursor-pointer ${isSelected
                       ? 'border-cyan-500/50 bg-[#111622] shadow-sm'
                       : 'border-white/[0.08] hover:border-white/[0.16] bg-[#0d111a]'
                     }`}
@@ -90,7 +90,7 @@ export default function Experience({ onNavigate }) {
           <div className="lg:col-span-4 sticky top-24 space-y-6">
 
             {/* Selected Role Inspector */}
-            <div className="cyber-card p-6 rounded-xl border border-white/[0.08] shadow-xl">
+            <div className="cyber-card p-4 sm:p-6 rounded-xl border border-white/[0.08] shadow-xl">
               <div className="flex items-center gap-2 mb-4 text-cyan-400 font-mono text-xs font-semibold pb-2 border-b border-white/[0.06]">
                 <Terminal className="w-4 h-4" />
                 <span>ROLE_DETAIL_INSPECTOR</span>

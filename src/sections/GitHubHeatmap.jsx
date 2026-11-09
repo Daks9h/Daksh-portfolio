@@ -72,50 +72,55 @@ export default function GitHubHeatmap() {
         </div>
 
         {/* 4 Stat Badges Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
-            <span className="text-2xl sm:text-3xl font-bold text-white block tracking-tight">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 mb-6 sm:mb-8">
+          <div className="p-3 sm:p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
+            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-white block tracking-tight">
               {portfolioData.stats.commitsTotal}
             </span>
-            <span className="text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
+            <span className="text-[11px] sm:text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
               <GitCommit className="w-3.5 h-3.5 text-cyan-400" />
               Total Commits
             </span>
           </div>
 
-          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
-            <span className="text-2xl sm:text-3xl font-bold text-emerald-400 block tracking-tight">
+          <div className="p-3 sm:p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
+            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-emerald-400 block tracking-tight">
               {portfolioData.stats.currentStreak}
             </span>
-            <span className="text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
+            <span className="text-[11px] sm:text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
               <Flame className="w-3.5 h-3.5 text-amber-400" />
               Active Streak
             </span>
           </div>
 
-          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
-            <span className="text-2xl sm:text-3xl font-bold text-cyan-400 block tracking-tight">
+          <div className="p-3 sm:p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
+            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-cyan-400 block tracking-tight">
               {portfolioData.stats.repositories}
             </span>
-            <span className="text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
+            <span className="text-[11px] sm:text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
               <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
               Public Repositories
             </span>
           </div>
 
-          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
-            <span className="text-2xl sm:text-3xl font-bold text-white block tracking-tight">
+          <div className="p-3 sm:p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
+            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-white block tracking-tight">
               {portfolioData.stats.bestDay}
             </span>
-            <span className="text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
+            <span className="text-[11px] sm:text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
               <GitFork className="w-3.5 h-3.5 text-purple-400" />
               Peak Single Day
             </span>
           </div>
         </div>
 
+        {/* Mobile Swipe Hint */}
+        <div className="flex sm:hidden items-center justify-center gap-1.5 text-[11px] font-mono text-cyan-400/80 mb-3 bg-cyan-950/40 py-1 px-3 rounded-full border border-cyan-500/20 w-fit mx-auto">
+          <span>← Swipe to explore 52 weeks →</span>
+        </div>
+
         {/* Matrix Container */}
-        <div className="cyber-card p-6 rounded-xl border border-white/[0.08] overflow-x-auto">
+        <div className="cyber-card p-4 sm:p-6 rounded-xl border border-white/[0.08] overflow-x-auto touch-scroll-container">
           {/* Months Legend */}
           <div className="flex justify-between text-[11px] font-mono text-slate-400 mb-2 min-w-[700px] px-1">
             {months.map((m, idx) => (

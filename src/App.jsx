@@ -107,9 +107,9 @@ export default function App() {
       {/* Centered Glowing Scroll Down Arrow Indicator (appears on any page with scrollable content) */}
       <ScrollDownIndicator activePage={activePage} />
 
-      {/* Open, Uncaged Content Layout - 90% of Screen Width with Sticky/Dynamic Footer */}
-      <div className="w-[90%] mx-auto relative z-10 flex flex-col min-h-screen">
-        <main className="flex-1 pt-24 sm:pt-28 lg:pt-32">
+      {/* Open, Uncaged Content Layout - Responsive 94% on mobile up to 90% on desktop */}
+      <div className="w-[94%] sm:w-[92%] lg:w-[90%] mx-auto relative z-10 flex flex-col min-h-screen">
+        <main className="flex-1 pt-20 sm:pt-28 lg:pt-32">
           <PageTransition pageKey={activePage}>
             {renderActivePage()}
           </PageTransition>

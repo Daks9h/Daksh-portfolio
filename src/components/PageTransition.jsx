@@ -45,7 +45,7 @@ export default function PageTransition({ pageKey, children }) {
 
       // Viewport & Truck Geometry Measurements
       const W = window.innerWidth || document.documentElement.clientWidth || 390;
-      const calculatedWidth = W < 640 ? 175 : 220;
+      const calculatedWidth = W < 480 ? 150 : W < 768 ? 180 : 220;
       setTruckWidth(calculatedWidth);
 
       // In the CyberTruck SVG (viewBox 0 0 260 85):
@@ -56,11 +56,11 @@ export default function PageTransition({ pageKey, children }) {
 
       // Start: Front bumper is just outside the screen left edge (-30px)
       const truckStartX = -frontOffset - 30;
-      // End: Rear bumper has crossed the screen right edge (+50px)
-      const truckEndX = W + 50 - rearOffset;
+      // End: Rear bumper has crossed the screen right edge (+60px)
+      const truckEndX = W + 60 - rearOffset;
       const totalDistance = truckEndX - truckStartX;
 
-      const duration = 1250; // 1.25s duration
+      const duration = 1200; // 1.2s duration
       const startTime = performance.now();
 
       // Cubic-bezier ease-in-out curve for realistic vehicle acceleration & deceleration
@@ -81,9 +81,9 @@ export default function PageTransition({ pageKey, children }) {
 
         // Position of the truck's origin on screen
         const currentTruckX = truckStartX + eased * totalDistance;
-        // Position of the truck's rear taillight blade on screen
-        const currentRearX = currentTruckX + rearOffset;
-        // The page is revealed strictly up to the rear bumper (never ahead of the truck)
+        // Position strictly behind the truck's rear taillight blade (trailing by 6px)
+        const currentRearX = currentTruckX + rearOffset - 6;
+        // The page is revealed strictly behind the rear bumper (never ahead of or through the truck)
         const revealX = Math.max(0, Math.min(W, currentRearX));
 
         // 1. Move Cybertruck on GPU composite layer
@@ -91,7 +91,7 @@ export default function PageTransition({ pageKey, children }) {
           truckRef.current.style.transform = `translate3d(${currentTruckX}px, 0, 0)`;
         }
 
-        // 2. Position vertical laser beam locked directly at the rear bumper
+        // 2. Position vertical laser beam locked directly behind the rear bumper
         if (laserRef.current) {
           if (revealX > 0 && revealX < W) {
             laserRef.current.style.display = 'block';
@@ -102,9 +102,13 @@ export default function PageTransition({ pageKey, children }) {
           }
         }
 
-        // 3. Unveil the incoming page strictly BEHIND the rear bumper
+        // 3. Unveil the incoming page strictly BEHIND the rear bumper in synchronized coordinates
         if (pageContentRef.current) {
-          pageContentRef.current.style.clipPath = `inset(0 calc(100% - ${revealX}px) 0 0)`;
+          const contentRect = pageContentRef.current.getBoundingClientRect();
+          const contentLeft = contentRect.left;
+          const contentWidth = contentRect.width;
+          const contentRevealX = Math.max(0, Math.min(contentWidth, revealX - contentLeft));
+          pageContentRef.current.style.clipPath = `inset(0 calc(100% - ${contentRevealX}px) 0 0)`;
         }
 
         if (progress < 1) {
@@ -147,20 +151,20 @@ export default function PageTransition({ pageKey, children }) {
           className="fixed inset-0 pointer-events-none z-[60] overflow-hidden"
           aria-hidden="true"
         >
-          {/* Vertical Cyan Photon Laser Sweep Line (locked to truck rear taillight) */}
+          {/* Vertical Cyan Photon Laser Sweep Line (locked directly behind truck rear) */}
           <div
             ref={laserRef}
-            className="absolute top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-cyan-400 to-transparent shadow-[0_0_18px_rgba(34,211,238,0.95)] truck-laser-line"
+            className="fixed top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-cyan-400 to-transparent shadow-[0_0_18px_rgba(34,211,238,0.95)] truck-laser-line pointer-events-none z-[61]"
             style={{ display: 'none' }}
           />
 
           {/* Glowing Neon Cyan Road Beam along bottom */}
-          <div className="fixed bottom-3 sm:bottom-5 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_14px_rgba(34,211,238,0.85)] truck-road-track" />
+          <div className="fixed bottom-2.5 sm:bottom-4 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_14px_rgba(34,211,238,0.85)] truck-road-track z-[60]" />
 
           {/* High-Performance Vector CyberTruck Racing Across Screen */}
           <div
             ref={truckRef}
-            className="fixed bottom-3 sm:bottom-5 left-0 will-change-transform"
+            className="fixed bottom-2.5 sm:bottom-4 left-0 will-change-transform z-[62]"
           >
             <CyberTruck width={truckWidth} />
           </div>

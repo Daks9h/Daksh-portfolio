@@ -62,11 +62,11 @@ export default function Navbar({ activePage = 'home', onNavigate }) {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-200 py-4 sm:py-5 lg:py-6">
-      {/* 90% Viewport Width Container */}
-      <div className="w-[90%] mx-auto max-w-7xl">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-200 py-3 sm:py-5 lg:py-6">
+      {/* Responsive Viewport Width Container */}
+      <div className="w-[94%] sm:w-[92%] lg:w-[90%] mx-auto max-w-7xl">
         <div
-          className={`flex items-center justify-between rounded-2xl sm:rounded-full px-5 sm:px-8 lg:px-10 py-3.5 sm:py-4 transition-all duration-300 ${
+          className={`flex items-center justify-between rounded-2xl sm:rounded-full px-4 sm:px-8 lg:px-10 py-2.5 sm:py-4 transition-all duration-300 ${
             scrolled
               ? 'bg-[#0d111a]/90 backdrop-blur-md border border-white/[0.1] shadow-2xl shadow-black/60'
               : 'bg-[#0d111a]/60 backdrop-blur-sm border border-white/[0.08]'
@@ -96,19 +96,19 @@ export default function Navbar({ activePage = 'home', onNavigate }) {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, 'home')}
-            className="flex items-center group focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-full py-2 px-5 bg-[#07090e]/90 border border-white/[0.08] hover:border-cyan-500/50 transition-all duration-200 shadow-xl shadow-black/50"
+            className="flex items-center group focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-full py-1.5 sm:py-2 px-3 sm:px-5 bg-[#07090e]/90 border border-white/[0.08] hover:border-cyan-500/50 transition-all duration-200 shadow-xl shadow-black/50"
             aria-label="Daksh Lalwani Home"
           >
-            <span className="text-cyan-400 font-mono font-black text-sm sm:text-base lg:text-lg group-hover:drop-shadow-[0_0_10px_rgba(6,182,212,0.9)] transition-all">
+            <span className="text-cyan-400 font-mono font-black text-xs sm:text-base lg:text-lg group-hover:drop-shadow-[0_0_10px_rgba(6,182,212,0.9)] transition-all">
               [[
             </span>
             <span 
-              className="text-xs sm:text-sm lg:text-base font-bold tracking-widest text-white group-hover:text-cyan-300 transition-colors px-2"
+              className="text-[11px] sm:text-sm lg:text-base font-bold tracking-wider sm:tracking-widest text-white group-hover:text-cyan-300 transition-colors px-1.5 sm:px-2"
               style={{ fontFamily: "'Michroma', sans-serif" }}
             >
               DAKSH.L
             </span>
-            <span className="text-cyan-400 font-mono font-black text-sm sm:text-base lg:text-lg group-hover:drop-shadow-[0_0_10px_rgba(6,182,212,0.9)] transition-all">
+            <span className="text-cyan-400 font-mono font-black text-xs sm:text-base lg:text-lg group-hover:drop-shadow-[0_0_10px_rgba(6,182,212,0.9)] transition-all">
               ]]
             </span>
           </a>
@@ -138,15 +138,15 @@ export default function Navbar({ activePage = 'home', onNavigate }) {
             <button
               ref={triggerRef}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 text-slate-300 hover:text-white rounded-xl border border-white/[0.08] bg-[#111622] hover:bg-[#161c2c] transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center"
+              className="p-2 sm:p-2.5 text-slate-300 hover:text-white rounded-xl border border-white/[0.08] bg-[#111622] hover:bg-[#161c2c] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-nav-dialog"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-cyan-400" />
+                <X className="w-5 h-5 text-cyan-400" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5" />
               )}
             </button>
           </div>
@@ -169,7 +169,7 @@ export default function Navbar({ activePage = 'home', onNavigate }) {
               role="dialog"
               aria-modal="true"
               aria-label="Site Navigation"
-              className="relative z-50 lg:hidden mt-3 bg-[#0d111a]/95 backdrop-blur-2xl border border-white/[0.08] rounded-2xl p-4 shadow-2xl shadow-black/80 flex flex-col gap-2 animate-in fade-in zoom-in-95 duration-200"
+              className="relative z-50 lg:hidden mt-3 bg-[#0d111a]/95 backdrop-blur-2xl border border-white/[0.08] rounded-2xl p-3 sm:p-4 shadow-2xl shadow-black/80 flex flex-col gap-2 animate-mobile-drawer"
             >
               {allNavItems.map((item) => {
                 const isActive = activePage === item.id;

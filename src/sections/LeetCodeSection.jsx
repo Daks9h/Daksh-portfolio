@@ -21,42 +21,42 @@ export default function LeetCodeSection() {
         </div>
 
         {/* 4 Stat Badges */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
-            <span className="text-2xl sm:text-3xl font-bold text-white block tracking-tight">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 mb-6 sm:mb-8">
+          <div className="p-3 sm:p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
+            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-white block tracking-tight">
               {portfolioData.stats.leetcodeSolved}
             </span>
-            <span className="text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
+            <span className="text-[11px] sm:text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
               <Code2 className="w-3.5 h-3.5 text-cyan-400" />
               Total Solved
             </span>
           </div>
 
-          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
-            <span className="text-2xl sm:text-3xl font-bold text-emerald-400 block tracking-tight">
+          <div className="p-3 sm:p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
+            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-emerald-400 block tracking-tight">
               {portfolioData.stats.leetcodeEasy}
             </span>
-            <span className="text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
+            <span className="text-[11px] sm:text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
               Easy Problems
             </span>
           </div>
 
-          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
-            <span className="text-2xl sm:text-3xl font-bold text-amber-400 block tracking-tight">
+          <div className="p-3 sm:p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
+            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-amber-400 block tracking-tight">
               {portfolioData.stats.leetcodeMedium}
             </span>
-            <span className="text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
+            <span className="text-[11px] sm:text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
               <TrendingUp className="w-3.5 h-3.5 text-amber-400" />
               Medium Problems
             </span>
           </div>
 
-          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
-            <span className="text-2xl sm:text-3xl font-bold text-red-400 block tracking-tight">
+          <div className="p-3 sm:p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
+            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-red-400 block tracking-tight">
               {portfolioData.stats.leetcodeHard}
             </span>
-            <span className="text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
+            <span className="text-[11px] sm:text-xs font-medium text-slate-400 flex items-center gap-1.5 mt-1">
               <Zap className="w-3.5 h-3.5 text-red-400" />
               Hard Problems
             </span>
@@ -64,7 +64,7 @@ export default function LeetCodeSection() {
         </div>
 
         {/* Breakdown Card */}
-        <div className="cyber-card p-6 sm:p-8 rounded-xl border border-white/[0.08]">
+        <div className="cyber-card p-4 sm:p-8 rounded-xl border border-white/[0.08]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
             {/* Left: Progress Bars */}

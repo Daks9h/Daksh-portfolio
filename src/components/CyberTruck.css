@@ -9,6 +9,12 @@
   will-change: transform;
 }
 
+@media (max-width: 640px) {
+  .cybertruck-container {
+    width: var(--truck-width, 150px);
+  }
+}
+
 /* Hardware-accelerated continuous turbine wheel rotation */
 .cybertruck-wheel {
   animation: cyberWheelSpin 0.32s infinite linear;

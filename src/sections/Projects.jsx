@@ -47,7 +47,7 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((proj) => {
             const isWorkflowOpen = !!expandedWorkflow[proj.id];
             return (
@@ -56,7 +56,7 @@ export default function Projects() {
                 className="cyber-card rounded-xl border border-white/[0.08] overflow-hidden flex flex-col justify-between group shadow-lg"
               >
                 {/* Visual Banner */}
-                <div className={`h-44 relative bg-gradient-to-br ${proj.imagePlaceholderColor} p-6 flex flex-col justify-between border-b border-white/[0.08] overflow-hidden`}>
+                <div className={`h-40 sm:h-44 relative bg-gradient-to-br ${proj.imagePlaceholderColor} p-4 sm:p-6 flex flex-col justify-between border-b border-white/[0.08] overflow-hidden`}>
                   <div className="flex items-center justify-between z-10">
                     <span className="font-mono text-xs font-semibold text-cyan-200 bg-[#07090e]/80 px-2.5 py-1 rounded-md border border-white/[0.08]">
                       {proj.id} • {proj.year}
@@ -68,7 +68,7 @@ export default function Projects() {
                   </div>
 
                   <div className="z-10">
-                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight group-hover:text-cyan-300 transition-colors">
                       {proj.title}
                     </h3>
                     <p className="text-xs text-slate-200 mt-1 line-clamp-1 font-medium">
@@ -78,7 +78,7 @@ export default function Projects() {
                 </div>
 
                 {/* Card Body */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
+                <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between space-y-4 sm:space-y-5">
                   <div>
                     <p className="text-slate-300 text-sm leading-relaxed mb-4">
                       {proj.description}

@@ -293,7 +293,7 @@ export default function NeuralInference() {
     <section aria-label="Interactive Neural Digit Recognition Demo" className="w-full">
       <div
         ref={cardRef}
-        className="cyber-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-white/[0.1] relative group w-full overflow-hidden shadow-2xl bg-[#090d16]/95 backdrop-blur-xl"
+        className="cyber-card p-4 sm:p-8 lg:p-10 rounded-2xl border border-white/[0.1] relative group w-full overflow-hidden shadow-2xl bg-[#090d16]/95 backdrop-blur-xl"
       >
         {/* Techno Corner Brackets */}
         <span className="techno-corner-tl" aria-hidden="true" />
@@ -329,13 +329,13 @@ export default function NeuralInference() {
         </div>
 
         {/* Main Grid: Prominent Large Square Drawer on Left, Results HUD on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center lg:items-stretch w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center lg:items-stretch w-full">
           
           {/* Left Column: Large Square Drawing Viewport & Action Bar */}
-          <div className="lg:col-span-5 flex flex-col items-center lg:items-start justify-between gap-5 w-full">
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-start justify-between gap-4 sm:gap-5 w-full">
             
-            {/* Large Square Drawing Canvas Container */}
-            <div className="cyber-card relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[400px] aspect-square overflow-hidden bg-[#020408] shadow-[0_0_35px_rgba(6,182,212,0.18)] transition-all duration-300 mx-auto lg:mx-0">
+            {/* Large Square Drawing Canvas Container - Responsive on Mobile */}
+            <div className="cyber-card relative w-full max-w-[270px] min-[380px]:max-w-[320px] sm:max-w-[360px] lg:max-w-[400px] aspect-square overflow-hidden bg-[#020408] shadow-[0_0_35px_rgba(6,182,212,0.18)] transition-all duration-300 mx-auto lg:mx-0">
               <canvas
                 ref={canvasRef}
                 role="img"
@@ -347,14 +347,14 @@ export default function NeuralInference() {
               {/* Cycling Numbers Guide Animation (0-9) when canvas is empty */}
               {!hasDrawn && (
                 <div
-                  className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-center p-6 z-20 transition-opacity duration-300"
+                  className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-center p-4 sm:p-6 z-20 transition-opacity duration-300"
                   aria-hidden="true"
                 >
                   {/* Subtle Blueprint Matrix Grid */}
                   <div className="absolute inset-0 bg-[radial-gradient(rgba(6,182,212,0.1)_1.5px,transparent_1.5px)] [background-size:20px_20px] pointer-events-none" />
 
                   {/* Animated Self-Drawing Stroke Guide */}
-                  <div className="relative w-44 h-44 sm:w-52 sm:h-52 flex items-center justify-center">
+                  <div className="relative w-36 h-36 min-[380px]:w-44 min-[380px]:h-44 sm:w-52 sm:h-52 flex items-center justify-center">
                     <svg
                       key={guideDigit}
                       viewBox="0 0 100 100"
@@ -375,7 +375,7 @@ export default function NeuralInference() {
                   </div>
 
                   {/* Cycling Instruction Badge */}
-                  <div className="mt-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold tracking-wider text-cyan-200 bg-cyan-950/80 border border-cyan-500/50 shadow-lg shadow-cyan-950/50 flex items-center justify-center">
+                  <div className="mt-2 px-3 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-mono font-bold tracking-wider text-cyan-200 bg-cyan-950/80 border border-cyan-500/50 shadow-lg shadow-cyan-950/50 flex items-center justify-center">
                     <span>DRAW DIGIT [{guideDigit}]</span>
                   </div>
                 </div>
@@ -383,7 +383,7 @@ export default function NeuralInference() {
             </div>
 
             {/* Action Bar Below Canvas */}
-            <div className="flex items-center gap-3 w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[400px] mx-auto lg:mx-0">
+            <div className="flex items-center gap-2.5 sm:gap-3 w-full max-w-[270px] min-[380px]:max-w-[320px] sm:max-w-[360px] lg:max-w-[400px] mx-auto lg:mx-0">
               <button
                 type="button"
                 onClick={handleClear}
@@ -429,34 +429,34 @@ export default function NeuralInference() {
           <div className="lg:col-span-7 flex flex-col justify-between w-full h-full min-w-0 space-y-4">
             
             {/* Real-Time Prediction Summary Banner */}
-            <div className="cyber-card p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 shadow-inner">
+            <div className="cyber-card p-3 sm:p-5 flex flex-wrap items-center justify-between gap-3 shadow-inner">
               {prediction ? (
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                   {prediction.topConfidence < 0.5 ? (
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-400/10 border border-amber-400/40 text-amber-300 font-mono text-xs sm:text-sm font-bold">
+                    <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-amber-400/10 border border-amber-400/40 text-amber-300 font-mono text-xs sm:text-sm font-bold">
                       <AlertTriangle className="w-4 h-4 text-amber-400" />
                       <span>LOW_CONFIDENCE (PRED: {prediction.topDigit})</span>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-cyan-500/20 border border-cyan-400/50 text-cyan-200 font-mono text-base sm:text-lg font-black shadow-[0_0_16px_rgba(6,182,212,0.3)]">
-                      <CheckCircle2 className="w-5 h-5 text-cyan-400" />
+                    <div className="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-cyan-500/20 border border-cyan-400/50 text-cyan-200 font-mono text-sm sm:text-lg font-black shadow-[0_0_16px_rgba(6,182,212,0.3)]">
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                       <span>PREDICTED: {prediction.topDigit}</span>
                     </div>
                   )}
 
-                  <div className="text-xs sm:text-sm font-mono text-slate-300">
-                    CONFIDENCE: <strong className="text-white font-bold text-sm sm:text-base">{Math.round(prediction.topConfidence * 100)}%</strong>
+                  <div className="text-[11px] sm:text-sm font-mono text-slate-300">
+                    CONFIDENCE: <strong className="text-white font-bold text-xs sm:text-base">{Math.round(prediction.topConfidence * 100)}%</strong>
                   </div>
                 </div>
               ) : (
-                <div className="text-xs sm:text-sm font-mono text-slate-400 flex items-center">
+                <div className="text-[11px] sm:text-sm font-mono text-slate-400 flex items-center">
                   <span>Awaiting input • Draw any single digit on the board</span>
                 </div>
               )}
 
               {prediction && (
-                <div className="text-xs sm:text-sm font-mono text-slate-400 flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/[0.03] border border-white/[0.06]">
-                  <Zap className="w-4 h-4 text-cyan-400" />
+                <div className="text-[11px] sm:text-sm font-mono text-slate-400 flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md bg-white/[0.03] border border-white/[0.06]">
+                  <Zap className="w-3.5 h-3.5 text-cyan-400" />
                   <span>LATENCY: <strong className="text-cyan-300 font-bold">{prediction.latencyMs}ms</strong></span>
                 </div>
               )}
@@ -477,7 +477,7 @@ export default function NeuralInference() {
             )}
 
             {/* 10 Probability Bars (0 - 9) */}
-            <div className="p-4 sm:p-5 rounded-xl bg-black/40 border border-white/[0.08] flex flex-col justify-between gap-2 sm:gap-2.5 w-full flex-1">
+            <div className="p-3 sm:p-5 rounded-xl bg-black/40 border border-white/[0.08] flex flex-col justify-between gap-1.5 sm:gap-2.5 w-full flex-1">
               {probabilities.map((prob, digit) => {
                 const isTop = prediction && prediction.topDigit === digit;
                 const isHighConf = isTop && prediction.topConfidence >= 0.5;

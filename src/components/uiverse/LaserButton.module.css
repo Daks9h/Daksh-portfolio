@@ -110,58 +110,52 @@
 /* Left vertical border */
 .l {
   left: 0;
-  top: -4px;
-  bottom: -4px;
+  top: 0;
+  bottom: 0;
   width: 2px;
   background: linear-gradient(
     180deg,
-    transparent 0%,
-    #06b6d4 4px,
+    #06b6d4 0%,
     #38bdf8 50%,
-    #06b6d4 calc(100% - 4px),
-    transparent 100%
+    #06b6d4 100%
   );
 }
 
 /* Right vertical border */
 .r {
   right: 0;
-  top: -4px;
-  bottom: -4px;
+  top: 0;
+  bottom: 0;
   width: 2px;
   background: linear-gradient(
     180deg,
-    transparent 0%,
-    #06b6d4 4px,
+    #06b6d4 0%,
     #38bdf8 50%,
-    #06b6d4 calc(100% - 4px),
-    transparent 100%
+    #06b6d4 100%
   );
 }
 
 /* Top horizontal border */
 .t {
   top: 0;
-  left: -4px;
-  right: -4px;
+  left: 0;
+  right: 0;
   height: 2px;
   background: linear-gradient(
     90deg,
-    transparent 0%,
-    #06b6d4 4px,
+    #06b6d4 0%,
     #38bdf8 20%,
     #ffffff 50%,
     #38bdf8 80%,
-    #06b6d4 calc(100% - 4px),
-    transparent 100%
+    #06b6d4 100%
   );
 }
 
 /* Bottom horizontal border */
 .b {
   bottom: 0;
-  left: -4px;
-  right: -4px;
+  left: 0;
+  right: 0;
   height: 2px;
   background: linear-gradient(
     90deg,

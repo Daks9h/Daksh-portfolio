@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import PageTransition from './components/PageTransition';
-import { FlickeringGrid } from './components/magicui/flickering-grid';
+import CyberBackground from './components/CyberBackground';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import GitHubHeatmap from './sections/GitHubHeatmap';
@@ -73,9 +73,9 @@ export default function App() {
             <div className="w-full pt-16 sm:pt-20 pb-20 border-t border-white/[0.06] mt-8 sm:mt-12">
               <div className="mb-5 flex flex-col items-center sm:items-start text-center sm:text-left">
                 <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs tracking-wider uppercase mb-1">
-                  <span>CLIENT-SIDE NEURAL NETWORK</span>
+                  <span>INTERACTIVE ML CONSOLE</span>
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <h2 className="section-title">
                   LIVE DIGIT CLASSIFIER
                 </h2>
                 <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-xl">
@@ -91,17 +91,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#07090e] text-[#f8fafc] font-sans relative selection:bg-cyan-500/25 selection:text-cyan-200 overflow-x-hidden">
-      {/* Magic UI Flickering Grid - Full Viewport Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <FlickeringGrid
-          className="size-full"
-          squareSize={4}
-          gridGap={6}
-          color="#6B7280"
-          maxOpacity={0.35}
-          flickerChance={0.1}
-        />
-      </div>
+      {/* Ambient Aurora & Shifting Matrix Tech Grid Background */}
+      <CyberBackground />
 
       {/* Global SVG ColorMatrix Filter for Laser Glow Border Beams */}
       <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }} aria-hidden="true">

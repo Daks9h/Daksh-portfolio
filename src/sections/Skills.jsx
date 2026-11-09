@@ -42,7 +42,7 @@ export default function Skills() {
             {portfolioData.skills.marquee.map((skill, idx) => (
               <div
                 key={idx}
-                className="cyber-card p-4 rounded-xl border border-white/[0.08] hover:border-cyan-500/40 transition-all group flex flex-col justify-between"
+                className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors flex flex-col justify-between group shadow-md"
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[10px] font-mono tracking-wider text-cyan-400 uppercase">

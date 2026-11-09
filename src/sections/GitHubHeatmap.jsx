@@ -73,7 +73,7 @@ export default function GitHubHeatmap() {
 
         {/* 4 Stat Badges Row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-          <div className="cyber-card p-4 rounded-xl border border-white/[0.08]">
+          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
             <span className="text-2xl sm:text-3xl font-bold text-white block tracking-tight">
               {portfolioData.stats.commitsTotal}
             </span>
@@ -83,7 +83,7 @@ export default function GitHubHeatmap() {
             </span>
           </div>
 
-          <div className="cyber-card p-4 rounded-xl border border-white/[0.08]">
+          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
             <span className="text-2xl sm:text-3xl font-bold text-emerald-400 block tracking-tight">
               {portfolioData.stats.currentStreak}
             </span>
@@ -93,7 +93,7 @@ export default function GitHubHeatmap() {
             </span>
           </div>
 
-          <div className="cyber-card p-4 rounded-xl border border-white/[0.08]">
+          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
             <span className="text-2xl sm:text-3xl font-bold text-cyan-400 block tracking-tight">
               {portfolioData.stats.repositories}
             </span>
@@ -103,7 +103,7 @@ export default function GitHubHeatmap() {
             </span>
           </div>
 
-          <div className="cyber-card p-4 rounded-xl border border-white/[0.08]">
+          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
             <span className="text-2xl sm:text-3xl font-bold text-white block tracking-tight">
               {portfolioData.stats.bestDay}
             </span>

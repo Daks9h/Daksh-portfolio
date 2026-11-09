@@ -71,81 +71,60 @@ h1, h2, h3, .section-title, .heading-font, .font-science, .font-gothic, .font-wa
   }
 }
 
-/* Impeccable Card Surface */
+/* ======================================================== */
+/* High-Craft Rectangular Cyber Card with Precision Corners  */
+/* (No Full Borders - Only Tech Accents on 4 Corners)       */
+/* ======================================================== */
 .cyber-card {
   position: relative;
-  background-color: #0d111a;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.5);
+  background-color: #0d111a !important;
+  border: none !important;
+  border-radius: 0px !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.6);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cyber-card:hover {
-  border-color: rgba(6, 182, 212, 0.35);
-  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(6, 182, 212, 0.12);
+  background-color: #101623 !important;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.7), 0 0 24px -6px rgba(6, 182, 212, 0.15);
   transform: translateY(-2px);
 }
 
-/* Techno HUD Corner Accents */
-.techno-corner-tl {
+/* All Four Precision Tech Corners (16px x 2px) */
+.cyber-card::before {
+  content: "";
   position: absolute;
-  top: -1px;
-  left: -1px;
-  width: 14px;
-  height: 14px;
-  border-top: 2px solid #06b6d4;
-  border-left: 2px solid #06b6d4;
+  inset: 0;
   pointer-events: none;
-  z-index: 10;
-  transition: all 0.25s ease;
+  z-index: 20;
+  background: 
+    /* Top-left horizontal & vertical */
+    linear-gradient(to right, #06b6d4 16px, transparent 16px) top left / 100% 2px no-repeat,
+    linear-gradient(to bottom, #06b6d4 16px, transparent 16px) top left / 2px 100% no-repeat,
+    /* Top-right horizontal & vertical */
+    linear-gradient(to left, #06b6d4 16px, transparent 16px) top right / 100% 2px no-repeat,
+    linear-gradient(to bottom, #06b6d4 16px, transparent 16px) top right / 2px 100% no-repeat,
+    /* Bottom-left horizontal & vertical */
+    linear-gradient(to right, #06b6d4 16px, transparent 16px) bottom left / 100% 2px no-repeat,
+    linear-gradient(to top, #06b6d4 16px, transparent 16px) bottom left / 2px 100% no-repeat,
+    /* Bottom-right horizontal & vertical */
+    linear-gradient(to left, #06b6d4 16px, transparent 16px) bottom right / 100% 2px no-repeat,
+    linear-gradient(to top, #06b6d4 16px, transparent 16px) bottom right / 2px 100% no-repeat;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+  opacity: 0.85;
 }
 
-.techno-corner-tr {
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  width: 14px;
-  height: 14px;
-  border-top: 2px solid #06b6d4;
-  border-right: 2px solid #06b6d4;
-  pointer-events: none;
-  z-index: 10;
-  transition: all 0.25s ease;
-}
-
-.techno-corner-bl {
-  position: absolute;
-  bottom: -1px;
-  left: -1px;
-  width: 14px;
-  height: 14px;
-  border-bottom: 2px solid #06b6d4;
-  border-left: 2px solid #06b6d4;
-  pointer-events: none;
-  z-index: 10;
-  transition: all 0.25s ease;
-}
-
-.techno-corner-br {
-  position: absolute;
-  bottom: -1px;
-  right: -1px;
-  width: 14px;
-  height: 14px;
-  border-bottom: 2px solid #06b6d4;
-  border-right: 2px solid #06b6d4;
-  pointer-events: none;
-  z-index: 10;
-  transition: all 0.25s ease;
-}
-
-.cyber-card:hover .techno-corner-tl,
-.cyber-card:hover .techno-corner-tr,
-.cyber-card:hover .techno-corner-bl,
-.cyber-card:hover .techno-corner-br {
-  border-color: #38bdf8;
+.cyber-card:hover::before {
+  opacity: 1;
   filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.9));
+}
+
+/* Legacy Corner Spans safely hidden to avoid duplicate thickness */
+.techno-corner-tl,
+.techno-corner-tr,
+.techno-corner-bl,
+.techno-corner-br {
+  display: none !important;
 }
 
 /* Clean Technical Badge */
@@ -460,11 +439,8 @@ h1, h2, h3, .section-title, .heading-font, .font-science, .font-gothic, .font-wa
   pointer-events: none;
   position: absolute;
   --w: 2px;
-  --t: -30px;
-  --s: calc(var(--t) * -1);
-  --e: calc(100% + var(--t));
-  --g: rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2) var(--s), rgba(255, 255, 255, 0.65) var(--s), #ffffff, rgba(255, 255, 255, 0.65) var(--e),
-    rgba(255, 255, 255, 0.2) var(--e), rgba(255, 255, 255, 0);
+  --t: 0px;
+  --g: rgba(255, 255, 255, 0.6) 0%, #ffffff 50%, rgba(255, 255, 255, 0.6) 100%;
 }
 
 .laser-button .a::before {
@@ -472,7 +448,7 @@ h1, h2, h3, .section-title, .heading-font, .font-science, .font-gothic, .font-wa
   position: absolute;
   inset: 0;
   background: inherit;
-  filter: blur(4px) url(#unopaq);
+  filter: blur(3px) url(#unopaq);
   z-index: -2;
 }
 
@@ -481,7 +457,7 @@ h1, h2, h3, .section-title, .heading-font, .font-science, .font-gothic, .font-wa
   position: absolute;
   inset: 0;
   background: inherit;
-  filter: blur(10px) url(#unopaq);
+  filter: blur(8px) url(#unopaq);
   opacity: 0;
   z-index: -2;
   transition: opacity 0.3s ease;
@@ -492,41 +468,40 @@ h1, h2, h3, .section-title, .heading-font, .font-science, .font-gothic, .font-wa
 }
 
 .laser-button .l {
-  left: -2px;
+  left: 0;
 }
 
 .laser-button .r {
-  right: -2px;
+  right: 0;
 }
 
 .laser-button .l,
 .laser-button .r {
   background: linear-gradient(var(--g));
-  top: var(--t);
-  bottom: var(--t);
+  top: 0;
+  bottom: 0;
   width: var(--w);
 }
 
 .laser-button .t {
-  top: -2px;
+  top: 0;
 }
 
 .laser-button .b {
-  bottom: -2px;
+  bottom: 0;
 }
 
 .laser-button .t,
 .laser-button .b {
   background: linear-gradient(90deg, var(--g));
-  left: var(--t);
-  right: var(--t);
+  left: 0;
+  right: 0;
   height: var(--w);
 }
 
 /* Laser Variants */
 .laser-button--cyan .a {
-  --g: rgba(6, 182, 212, 0), rgba(6, 182, 212, 0.25) var(--s), rgba(6, 182, 212, 0.8) var(--s), #38bdf8, rgba(6, 182, 212, 0.8) var(--e),
-    rgba(6, 182, 212, 0.25) var(--e), rgba(6, 182, 212, 0);
+  --g: rgba(6, 182, 212, 0.6) 0%, #38bdf8 50%, rgba(6, 182, 212, 0.6) 100%;
 }
 .laser-button--cyan {
   color: #a5f3fc;
@@ -537,8 +512,7 @@ h1, h2, h3, .section-title, .heading-font, .font-science, .font-gothic, .font-wa
 }
 
 .laser-button--emerald .a {
-  --g: rgba(46, 213, 115, 0), rgba(46, 213, 115, 0.25) var(--s), rgba(46, 213, 115, 0.8) var(--s), #4ade80, rgba(46, 213, 115, 0.8) var(--e),
-    rgba(46, 213, 115, 0.25) var(--e), rgba(46, 213, 115, 0);
+  --g: rgba(46, 213, 115, 0.6) 0%, #4ade80 50%, rgba(46, 213, 115, 0.6) 100%;
 }
 .laser-button--emerald {
   color: #86efac;

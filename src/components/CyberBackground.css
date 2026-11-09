@@ -1,0 +1,155 @@
+/* ==========================================================================
+   CyberBackground - Ambient Aurora & Isometric Matrix Tech Grid
+   Ported & color-matched to Daksh Lalwani's Obsidian, Cyan & Emerald Palette
+   ========================================================================== */
+
+.cyber-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #07090e;
+}
+
+/* Base Ambient Aurora Mesh */
+.cyber-bg-aurora {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Cyan Core Aurora (Top-Left) */
+    radial-gradient(
+      ellipse 65% 50% at 20% 25%,
+      rgba(6, 182, 212, 0.32) 0%,
+      rgba(6, 182, 212, 0.12) 35%,
+      rgba(6, 182, 212, 0) 65%
+    ),
+    /* Deep Tech Blue / Indigo Aurora (Right) */
+    radial-gradient(
+      ellipse 60% 55% at 82% 45%,
+      rgba(59, 130, 246, 0.28) 0%,
+      rgba(99, 102, 241, 0.12) 40%,
+      rgba(59, 130, 246, 0) 70%
+    ),
+    /* Emerald Matrix Pulse Aurora (Bottom-Center) */
+    radial-gradient(
+      ellipse 70% 50% at 50% 85%,
+      rgba(16, 185, 129, 0.22) 0%,
+      rgba(6, 182, 212, 0.08) 40%,
+      rgba(16, 185, 129, 0) 68%
+    ),
+    /* Obsidian Deep Space Underlay */
+    linear-gradient(135deg, #05070a 0%, #07090e 50%, #0a101d 100%);
+  background-blend-mode: screen, screen, screen, normal;
+  animation: cyber-aurora-drift 26s infinite alternate ease-in-out;
+  will-change: background-position, transform;
+}
+
+/* Pseudo-element crosshatch tech-grid shifting indefinitely */
+.cyber-bg-aurora::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(56, 189, 248, 0.035) 0px,
+      rgba(56, 189, 248, 0.035) 1px,
+      transparent 1px,
+      transparent 44px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 64px
+    );
+  animation: cyber-grid-shift 24s linear infinite;
+  will-change: transform;
+}
+
+/* Radial Vignette Mask to keep focus on center content while edges stay deep obsidian */
+.cyber-bg-aurora::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    transparent 50%,
+    rgba(7, 9, 14, 0.75) 85%,
+    rgba(7, 9, 14, 0.95) 100%
+  );
+  animation: cyber-aurora-pulse 9s infinite alternate ease-in-out;
+  will-change: opacity, transform;
+}
+
+/* Hardware-accelerated gentle background drift */
+@keyframes cyber-aurora-drift {
+  0% {
+    background-position:
+      0% 0%,
+      0% 0%,
+      0% 0%;
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    background-position:
+      -8% -5%,
+      6% 8%,
+      -4% 10%;
+    transform: scale3d(1.02, 1.02, 1);
+  }
+  100% {
+    background-position:
+      6% 8%,
+      -7% -5%,
+      10% -4%;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Continuous smooth diagonal grid shift */
+@keyframes cyber-grid-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+/* Ambient breathing vignette pulse */
+@keyframes cyber-aurora-pulse {
+  0% {
+    opacity: 0.85;
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale3d(1.03, 1.03, 1);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Strict reduced-motion compliance */
+@media (prefers-reduced-motion: reduce) {
+  .cyber-bg-aurora,
+  .cyber-bg-aurora::before,
+  .cyber-bg-aurora::after {
+    animation: none !important;
+  }
+}
+

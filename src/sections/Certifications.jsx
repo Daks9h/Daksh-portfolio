@@ -26,7 +26,7 @@ export default function Certifications() {
               {portfolioData.certifications.map((cert, idx) => (
                 <div
                   key={idx}
-                  className="cyber-card p-4 rounded-xl border border-white/[0.08] hover:border-cyan-500/30 transition-all flex flex-col justify-between"
+                  className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors flex flex-col justify-between shadow-md"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
@@ -58,7 +58,7 @@ export default function Certifications() {
               {portfolioData.activities.map((act, idx) => (
                 <div
                   key={idx}
-                  className="cyber-card p-5 rounded-xl border border-white/[0.08]"
+                  className="p-5 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md"
                 >
                   <div className="flex items-center gap-2 mb-1.5">
                     <Users className="w-4 h-4 text-cyan-400" />

@@ -322,10 +322,7 @@ export default function NeuralInference() {
           </div>
 
           <div className="flex items-center gap-3 text-xs font-mono">
-            <span className="text-emerald-400 flex items-center px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 font-medium">
-              {modelState === 'READY' ? 'LIVE // READY' : modelState}
-            </span>
-            <span className="text-cyan-300 px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 font-medium hidden sm:inline">
+            <span className="text-cyan-300 px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 font-medium">
               ACC: ~99%
             </span>
           </div>
@@ -338,14 +335,7 @@ export default function NeuralInference() {
           <div className="lg:col-span-5 flex flex-col items-center lg:items-start justify-between gap-5 w-full">
             
             {/* Large Square Drawing Canvas Container */}
-            <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[400px] aspect-square rounded-2xl overflow-hidden border-2 border-cyan-500/30 bg-[#020408] shadow-[0_0_35px_rgba(6,182,212,0.18)] group-hover:border-cyan-400/60 transition-all duration-300 mx-auto lg:mx-0">
-              
-              {/* Corner Precision Reticles */}
-              <span className="absolute top-2.5 left-2.5 text-xs font-mono text-cyan-400/40 select-none pointer-events-none" aria-hidden="true">┌</span>
-              <span className="absolute top-2.5 right-2.5 text-xs font-mono text-cyan-400/40 select-none pointer-events-none" aria-hidden="true">┐</span>
-              <span className="absolute bottom-2.5 left-2.5 text-xs font-mono text-cyan-400/40 select-none pointer-events-none" aria-hidden="true">└</span>
-              <span className="absolute bottom-2.5 right-2.5 text-xs font-mono text-cyan-400/40 select-none pointer-events-none" aria-hidden="true">┘</span>
-
+            <div className="cyber-card relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[400px] aspect-square overflow-hidden bg-[#020408] shadow-[0_0_35px_rgba(6,182,212,0.18)] transition-all duration-300 mx-auto lg:mx-0">
               <canvas
                 ref={canvasRef}
                 role="img"
@@ -439,7 +429,7 @@ export default function NeuralInference() {
           <div className="lg:col-span-7 flex flex-col justify-between w-full h-full min-w-0 space-y-4">
             
             {/* Real-Time Prediction Summary Banner */}
-            <div className="p-4 sm:p-5 rounded-xl bg-black/60 border border-white/[0.1] flex flex-wrap items-center justify-between gap-4 shadow-inner">
+            <div className="cyber-card p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 shadow-inner">
               {prediction ? (
                 <div className="flex flex-wrap items-center gap-4">
                   {prediction.topConfidence < 0.5 ? (

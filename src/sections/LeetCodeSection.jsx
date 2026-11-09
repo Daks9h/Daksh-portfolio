@@ -22,7 +22,7 @@ export default function LeetCodeSection() {
 
         {/* 4 Stat Badges */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-          <div className="cyber-card p-4 rounded-xl border border-white/[0.08]">
+          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
             <span className="text-2xl sm:text-3xl font-bold text-white block tracking-tight">
               {portfolioData.stats.leetcodeSolved}
             </span>
@@ -32,7 +32,7 @@ export default function LeetCodeSection() {
             </span>
           </div>
 
-          <div className="cyber-card p-4 rounded-xl border border-white/[0.08]">
+          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
             <span className="text-2xl sm:text-3xl font-bold text-emerald-400 block tracking-tight">
               {portfolioData.stats.leetcodeEasy}
             </span>
@@ -42,7 +42,7 @@ export default function LeetCodeSection() {
             </span>
           </div>
 
-          <div className="cyber-card p-4 rounded-xl border border-white/[0.08]">
+          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
             <span className="text-2xl sm:text-3xl font-bold text-amber-400 block tracking-tight">
               {portfolioData.stats.leetcodeMedium}
             </span>
@@ -52,7 +52,7 @@ export default function LeetCodeSection() {
             </span>
           </div>
 
-          <div className="cyber-card p-4 rounded-xl border border-white/[0.08]">
+          <div className="p-4 bg-[#0d111a] hover:bg-[#111622] transition-colors shadow-md">
             <span className="text-2xl sm:text-3xl font-bold text-red-400 block tracking-tight">
               {portfolioData.stats.leetcodeHard}
             </span>

@@ -11,37 +11,61 @@ import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Certifications from './sections/Certifications';
 import Contact from './sections/Contact';
+import NotFound from './sections/NotFound';
 import Footer from './components/Footer';
 import NeuralInference from './components/NeuralInference';
 import ScrollDownIndicator from './components/ScrollDownIndicator';
 
 const VALID_PAGES = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
 
-const getPageFromHash = () => {
-  if (typeof window === 'undefined') return 'home';
-  const hash = window.location.hash.replace('#', '').toLowerCase();
-  return VALID_PAGES.includes(hash) ? hash : 'home';
+const getRouteState = () => {
+  if (typeof window === 'undefined') return { page: 'home', target: '' };
+
+  // 1. Pathname check: if someone enters a subpath other than root
+  const pathname = window.location.pathname;
+  if (pathname && pathname !== '/' && pathname !== '/index.html') {
+    return { page: '404', target: pathname };
+  }
+
+  // 2. Hash check
+  const hash = window.location.hash.replace(/^#\/?/, '').trim().toLowerCase();
+  if (hash) {
+    if (VALID_PAGES.includes(hash)) {
+      return { page: hash, target: '' };
+    }
+    return { page: '404', target: `#${hash}` };
+  }
+
+  return { page: 'home', target: '' };
 };
 
 export default function App() {
-  const [activePage, setActivePage] = useState(getPageFromHash);
+  const [routeState, setRouteState] = useState(getRouteState);
+  const activePage = routeState.page;
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const page = getPageFromHash();
-      setActivePage((prev) => (prev === page ? prev : page));
+    const handleLocationChange = () => {
+      const nextRoute = getRouteState();
+      setRouteState(nextRoute);
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    window.addEventListener('popstate', handleLocationChange);
+    return () => {
+      window.removeEventListener('hashchange', handleLocationChange);
+      window.removeEventListener('popstate', handleLocationChange);
+    };
   }, []);
 
   const handleNavigate = (page) => {
     if (VALID_PAGES.includes(page)) {
-      if (window.location.hash !== `#${page}`) {
+      // Clear any invalid pathname if user was on a 404 URL like /foo
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        window.history.pushState(null, '', `/#${page}`);
+      } else if (window.location.hash !== `#${page}`) {
         window.location.hash = page;
       }
-      setActivePage(page);
+      setRouteState({ page, target: '' });
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
   };
@@ -65,6 +89,8 @@ export default function App() {
         return <Projects />;
       case 'contact':
         return <Contact />;
+      case '404':
+        return <NotFound invalidTarget={routeState.target} onNavigate={handleNavigate} />;
       case 'home':
       default:
         return (

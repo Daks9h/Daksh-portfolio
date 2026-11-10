@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, AlertCircle, ArrowUpRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../components/SocialIcons';
 import confetti from 'canvas-confetti';
 import { portfolioData } from '../data/portfolioData';
@@ -13,26 +13,54 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+        }),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.error || `Error dispatching message (HTTP ${response.status})`);
+      }
+
       setIsSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
       confetti({
         particleCount: 80,
         spread: 70,
         origin: { y: 0.6 },
         colors: ['#06b6d4', '#3b82f6', '#10b981', '#ffffff']
       });
+
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormData({ name: '', email: '', message: '' });
-      }, 5000);
-    }, 1000);
+      }, 7000);
+    } catch (err) {
+      console.error('Contact submission error:', err);
+      setErrorMessage(
+        err.message || 'Transmission failed. You can also contact Daksh directly at dakshlalwani89@gmail.com'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -221,6 +249,22 @@ export default function Contact() {
                   <div className="p-3.5 bg-emerald-950/60 border border-emerald-500/40 rounded-lg flex items-center gap-2.5 text-emerald-300 text-xs font-medium animate-fadeIn">
                     <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>Message received! Daksh will respond to your inquiry shortly.</span>
+                  </div>
+                )}
+
+                {/* Error State */}
+                {errorMessage && (
+                  <div className="p-3.5 bg-red-950/60 border border-red-500/40 rounded-lg flex items-start gap-2.5 text-red-300 text-xs font-medium animate-fadeIn">
+                    <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                    <div className="flex-1">
+                      <p>{errorMessage}</p>
+                      <a
+                        href={`mailto:${portfolioData.personal.email}`}
+                        className="text-cyan-400 hover:underline mt-1 inline-block"
+                      >
+                        Send directly via your email client →
+                      </a>
+                    </div>
                   </div>
                 )}
 

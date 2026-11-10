@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | Daksh Lalwani</title>
+    <meta name="theme-color" content="#06b6d4" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23020617'/%3E%3Ctext x='50' y='65' font-family='monospace' font-size='50' font-weight='bold' fill='%2338bdf8' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background-color: #07090e;
+        color: #f8fafc;
+        font-family: 'Sora', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        position: relative;
+        overflow-x: hidden;
+      }
+      .bg-aurora {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse at 20% 30%, rgba(138, 43, 226, 0.12) 0%, transparent 60%),
+          radial-gradient(ellipse at 80% 50%, rgba(6, 182, 212, 0.12) 0%, transparent 70%),
+          radial-gradient(ellipse at 50% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 65%);
+        z-index: 0;
+      }
+      .card {
+        position: relative;
+        z-index: 1;
+        max-width: 580px;
+        width: 100%;
+        background: #0d111a;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 40px 32px;
+        text-align: center;
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+      }
+      .corner-tl { position: absolute; top: 0; left: 0; width: 12px; height: 12px; border-top: 2px solid #06b6d4; border-left: 2px solid #06b6d4; }
+      .corner-tr { position: absolute; top: 0; right: 0; width: 12px; height: 12px; border-top: 2px solid #06b6d4; border-right: 2px solid #06b6d4; }
+      .corner-bl { position: absolute; bottom: 0; left: 0; width: 12px; height: 12px; border-bottom: 2px solid #06b6d4; border-left: 2px solid #06b6d4; }
+      .corner-br { position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; border-bottom: 2px solid #06b6d4; border-right: 2px solid #06b6d4; }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 12px;
+        background: rgba(6, 182, 212, 0.1);
+        border: 1px solid rgba(6, 182, 212, 0.3);
+        border-radius: 9999px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        color: #22d3ee;
+        margin-bottom: 20px;
+      }
+      .dot { width: 6px; height: 6px; border-radius: 50%; background: #06b6d4; }
+      .digit-404 {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 72px;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+      h1 { font-size: 22px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 8px; }
+      p { font-size: 13px; color: #94a3b8; line-height: 1.6; max-width: 420px; margin: 0 auto 24px auto; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 28px;
+        background: #06b6d4;
+        color: #07090e;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 4px;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+      .btn:hover { background: #38bdf8; transform: translateY(-1px); }
+    </style>
+  </head>
+  <body>
+    <div class="bg-aurora" aria-hidden="true"></div>
+    <main class="card">
+      <div class="corner-tl" aria-hidden="true"></div>
+      <div class="corner-tr" aria-hidden="true"></div>
+      <div class="corner-bl" aria-hidden="true"></div>
+      <div class="corner-br" aria-hidden="true"></div>
+
+      <div class="badge">
+        <span class="dot"></span>
+        <span>HTTP 404 // UNRESOLVED ENDPOINT</span>
+      </div>
+
+      <div class="digit-404">404</div>
+      <h1>PAGE NOT FOUND</h1>
+      <p>The requested coordinate does not exist or has been relocated within this deployment.</p>
+
+      <a href="/#home" class="btn">
+        Return to Home
+      </a>
+    </main>
+    <script>
+      // Automatically redirect to the SPA root preserving the target hash if applicable
+      if (window.location.pathname && window.location.pathname !== '/' && window.location.pathname !== '/404.html') {
+        const raw = window.location.pathname.replace(/^\//, '');
+        if (raw) {
+          window.location.replace('/#' + raw);
+        }
+      }
+    </script>
+  </body>
+</html>
+

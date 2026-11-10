@@ -179,11 +179,11 @@ export default function LatentSpaceProjects() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-white/[0.06] gap-2">
         <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-semibold tracking-wide">
           <Terminal className="w-4 h-4" />
-          <span>&gt;_ LATENT_SPACE // PROJECT_PROJECTION</span>
+          <span>&gt;_ LATENT SPACE // PROJECT PROJECTION</span>
         </div>
         <div className="flex items-center gap-4 text-[11px] font-mono text-slate-400">
-          <span>COORDINATES: HARMONIC_2D</span>
-          <span className="text-cyan-400">N_NODES: {latentProjects.length}</span>
+          <span>COORDINATES: HARMONIC 2D</span>
+          <span className="text-cyan-400">N NODES: {latentProjects.length}</span>
         </div>
       </div>
 
@@ -209,7 +209,7 @@ export default function LatentSpaceProjects() {
           </div>
           <div className="mt-2 text-[10px] font-mono text-slate-500 flex justify-between px-1">
             <span>HOVER / TAP DOT TO INSPECT</span>
-            <span className="text-cyan-400/80">INTERACTIVE_CANVAS</span>
+            <span className="text-cyan-400/80">INTERACTIVE CANVAS</span>
           </div>
         </div>
 

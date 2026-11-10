@@ -99,15 +99,15 @@ export function drawHUD(ctx, nodeCount, activeTitle, w, h) {
   ctx.fillStyle = '#38bdf8';
   ctx.font = '8px "JetBrains Mono", monospace';
   ctx.textAlign = 'left';
-  ctx.fillText('[VIEW: 2D_PROJECTION]', 10, 14);
+  ctx.fillText('[VIEW: 2D PROJECTION]', 10, 14);
 
   ctx.textAlign = 'right';
-  ctx.fillText(`N_NODES: ${nodeCount}`, w - 10, 14);
+  ctx.fillText(`N NODES: ${nodeCount}`, w - 10, 14);
 
   ctx.textAlign = 'left';
   ctx.fillText('PROJECTION: MANUAL', 10, h - 8);
 
   ctx.textAlign = 'right';
-  const statusText = activeTitle ? `ACTIVE: ${activeTitle}` : 'SELECT_DOT';
+  const statusText = activeTitle ? `ACTIVE: ${activeTitle}` : 'SELECT DOT';
   ctx.fillText(statusText, w - 10, h - 8);
 }

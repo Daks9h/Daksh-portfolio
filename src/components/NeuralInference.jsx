@@ -318,7 +318,7 @@ export default function NeuralInference() {
         <div className="flex flex-wrap items-center justify-between gap-3 mb-8 border-b border-white/[0.08] pb-4">
           <div className="flex items-center gap-2.5 text-cyan-400 font-mono text-sm sm:text-base font-bold tracking-wider">
             <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
-            <span>&gt;_ NEURAL_INFERENCE</span>
+            <span>&gt;_ NEURAL INFERENCE</span>
           </div>
 
           <div className="flex items-center gap-3 text-xs font-mono">
@@ -435,7 +435,7 @@ export default function NeuralInference() {
                   {prediction.topConfidence < 0.5 ? (
                     <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-amber-400/10 border border-amber-400/40 text-amber-300 font-mono text-xs sm:text-sm font-bold">
                       <AlertTriangle className="w-4 h-4 text-amber-400" />
-                      <span>LOW_CONFIDENCE (PRED: {prediction.topDigit})</span>
+                      <span>LOW CONFIDENCE (PRED: {prediction.topDigit})</span>
                     </div>
                   ) : (
                     <div className="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-cyan-500/20 border border-cyan-400/50 text-cyan-200 font-mono text-sm sm:text-lg font-black shadow-[0_0_16px_rgba(6,182,212,0.3)]">

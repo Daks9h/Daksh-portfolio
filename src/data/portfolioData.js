@@ -87,7 +87,7 @@ export const portfolioData = {
     {
       id: "PROJ_01",
       year: "2025 – 2026",
-      title: "AI_STUDYMATE",
+      title: "AI STUDYMATE",
       subtitle: "Multimodal AI Study Assistant & Chrome Extension",
       category: "AI",
       tags: ["Python", "FastAPI", "Groq API (LLaMA 3.1)", "Faster-Whisper", "Sentence-Transformers", "Supabase pgvector", "Manifest V3", "FFmpeg"],
@@ -135,7 +135,7 @@ export const portfolioData = {
     {
       id: "PROJ_03",
       year: "2024 – 2025",
-      title: "SAFAL_DARSHAN",
+      title: "SAFAL DARSHAN",
       subtitle: "Temple Tourism & Darshan Guidance Platform",
       category: "FULLSTACK",
       tags: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "Tailwind CSS"],
@@ -161,7 +161,7 @@ export const portfolioData = {
     {
       id: "LOG_01",
       period: "MAY 2026 – PRESENT",
-      role: "FULL_STACK_ENGINEER (MERN)",
+      role: "FULL STACK ENGINEER (MERN)",
       organization: "ISA-India",
       status: "ACTIVE_OPERATION",
       tags: ["MERN", "React.js", "Node.js", "Express.js", "MongoDB", "REST APIs"],
@@ -170,7 +170,7 @@ export const portfolioData = {
     {
       id: "LOG_02",
       period: "APR 2026 – JUN 2026",
-      role: "WEB_DEVELOPER",
+      role: "WEB DEVELOPER",
       organization: "Wedeption",
       status: "COMPLETED",
       tags: ["React.js", "Firebase", "Supabase", "Tailwind CSS"],
@@ -179,7 +179,7 @@ export const portfolioData = {
     {
       id: "LOG_03",
       period: "NOV 2025 – JAN 2026",
-      role: "OPEN_SOURCE_CONTRIBUTOR",
+      role: "OPEN SOURCE CONTRIBUTOR",
       organization: "Code Social",
       status: "COMPLETED",
       tags: ["React.js", "JavaScript", "Git", "GitHub", "UI/UX"],
@@ -188,7 +188,7 @@ export const portfolioData = {
     {
       id: "LOG_04",
       period: "SEP 2025 – NOV 2025",
-      role: "FRONTEND_DEVELOPER",
+      role: "FRONTEND DEVELOPER",
       organization: "Edunet Foundation",
       status: "COMPLETED",
       tags: ["HTML5", "CSS3", "JavaScript", "React.js", "REST APIs"],
@@ -200,8 +200,8 @@ export const portfolioData = {
     { label: "DEGREE", value: "B.Tech Computer Science (AIML)" },
     { label: "INSTITUTION", value: "Lakshmi Narain College of Technology (LNCT), Bhopal" },
     { label: "TENURE", value: "Sep 2024 – 2028" },
-    { label: "ACADEMIC_RECORD", value: "8.31 / 10 CGPA" },
-    { label: "CORE_FOCUS", value: "Data Structures, Algorithms (Java), AI & ML" }
+    { label: "ACADEMIC RECORD", value: "8.31 / 10 CGPA" },
+    { label: "CORE FOCUS", value: "Data Structures, Algorithms (Java), AI & ML" }
   ],
 
   certifications: [

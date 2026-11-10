@@ -60,7 +60,7 @@ const latentMetadata = {
 const additionalNodes = [
   {
     id: 'PROJ_04',
-    title: 'CHROME_EXT_RAG',
+    title: 'CHROME EXT RAG',
     domain: 'ML',
     clusterName: 'Machine Learning & RAG',
     stack: ['Manifest V3', 'JavaScript', 'FastAPI'],
@@ -74,7 +74,7 @@ const additionalNodes = [
   },
   {
     id: 'PROJ_05',
-    title: 'PORTFOLIO_OS',
+    title: 'PORTFOLIO OS',
     domain: 'WEB',
     clusterName: 'Full-Stack Architecture',
     stack: ['React 19', 'Tailwind', 'Canvas API'],
@@ -88,7 +88,7 @@ const additionalNodes = [
   },
   {
     id: 'PROJ_06',
-    title: 'DSA_ALGO_SUITE',
+    title: 'DSA ALGO SUITE',
     domain: 'SYSTEMS',
     clusterName: 'Systems & Algorithmic Rigor',
     stack: ['Java', 'Algorithms', 'Data Structures'],

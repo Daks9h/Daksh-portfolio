@@ -98,7 +98,7 @@ export default function LeetCodeSection() {
             <div className="lg:col-span-5 bg-[#111622] p-5 rounded-xl border border-white/[0.06] space-y-3">
               <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-semibold">
                 <Code2 className="w-4 h-4" />
-                <span>DSA_FOUNDATION</span>
+                <span>DSA FOUNDATION</span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Strong focus on Arrays, Trees, Dynamic Programming, Graphs, and Hash Tables in Java and C++.

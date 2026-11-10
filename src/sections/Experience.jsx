@@ -36,7 +36,7 @@ export default function Experience({ onNavigate }) {
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-xs font-semibold text-cyan-300 bg-cyan-950/50 px-2.5 py-0.5 rounded-md border border-cyan-500/30">
-                        {exp.id}
+                        {exp.id.replace('_', ' ')}
                       </span>
                       <span className="text-slate-600">•</span>
                       <span className="text-xs font-medium text-slate-400">
@@ -93,7 +93,7 @@ export default function Experience({ onNavigate }) {
             <div className="cyber-card p-4 sm:p-6 rounded-xl border border-white/[0.08] shadow-xl">
               <div className="flex items-center gap-2 mb-4 text-cyan-400 font-mono text-xs font-semibold pb-2 border-b border-white/[0.06]">
                 <Terminal className="w-4 h-4" />
-                <span>ROLE_DETAIL_INSPECTOR</span>
+                <span>ROLE DETAIL INSPECTOR</span>
               </div>
 
               {portfolioData.experience[activeLog] && (

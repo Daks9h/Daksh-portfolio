@@ -31,7 +31,7 @@ export default function About() {
               {/* Header */}
               <div className="flex items-center gap-2 mb-4 text-cyan-400 font-mono text-xs font-semibold tracking-wide">
                 <User className="w-4 h-4" />
-                <span>PROFILE_OVERVIEW</span>
+                <span>PROFILE OVERVIEW</span>
               </div>
 
               {/* Structured Specifications Grid */}
@@ -100,7 +100,7 @@ export default function About() {
               {/* Header */}
               <div className="flex items-center gap-2 mb-4 text-cyan-400 font-mono text-xs font-semibold tracking-wide">
                 <BookOpen className="w-4 h-4" />
-                <span>ACADEMIC_EXCELLENCE</span>
+                <span>ACADEMIC EXCELLENCE</span>
               </div>
 
               {/* Structured Academic Grid */}
@@ -170,7 +170,7 @@ export default function About() {
               <div>
                 <div className="flex items-center gap-2 mb-3 text-cyan-400 font-mono text-xs font-semibold tracking-wide">
                   <Compass className="w-4 h-4" />
-                  <span>ENGINEERING_APPROACH</span>
+                  <span>ENGINEERING APPROACH</span>
                 </div>
 
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">

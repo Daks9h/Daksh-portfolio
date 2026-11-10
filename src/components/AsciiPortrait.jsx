@@ -108,10 +108,10 @@ export default function AsciiPortrait() {
       ctx.fillStyle = '#38bdf8';
       ctx.font = '8px "JetBrains Mono", monospace';
       ctx.textAlign = 'left';
-      ctx.fillText('[AVATAR_RENDER: DAKSH.L]', 10, 14);
+      ctx.fillText('[AVATAR RENDER: DAKSH.L]', 10, 14);
       ctx.textAlign = 'right';
       ctx.fillText('STATUS: ONLINE', width - 10, 14);
-      ctx.fillText('MODE: BIO_NEURAL', width - 10, height - 8);
+      ctx.fillText('MODE: BIO NEURAL', width - 10, height - 8);
       ctx.textAlign = 'left';
       ctx.fillText('2026 // B.TECH AIML', 10, height - 8);
 
@@ -137,7 +137,7 @@ export default function AsciiPortrait() {
       <div className="flex-1 flex flex-col justify-between">
         <div className="flex items-center gap-2 mb-4 text-cyan-400 font-mono text-xs font-semibold tracking-wide">
           <Terminal className="w-4 h-4" />
-          <span>BIO_NEURAL_AVATAR</span>
+          <span>BIO NEURAL AVATAR</span>
         </div>
 
         <div className="relative rounded-sm overflow-hidden border border-cyan-500/25 bg-[#07090e]/80 flex-1 flex items-center justify-center my-1">

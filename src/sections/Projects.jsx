@@ -59,7 +59,7 @@ export default function Projects() {
                 <div className={`h-40 sm:h-44 relative bg-gradient-to-br ${proj.imagePlaceholderColor} p-4 sm:p-6 flex flex-col justify-between border-b border-white/[0.08] overflow-hidden`}>
                   <div className="flex items-center justify-between z-10">
                     <span className="font-mono text-xs font-semibold text-cyan-200 bg-[#07090e]/80 px-2.5 py-1 rounded-md border border-white/[0.08]">
-                      {proj.id} • {proj.year}
+                      {proj.id.replace('_', ' ')} • {proj.year}
                     </span>
                     <span className="font-mono text-[10px] font-medium text-emerald-300 bg-[#07090e]/80 px-2.5 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>

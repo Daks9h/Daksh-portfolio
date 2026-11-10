@@ -57,7 +57,7 @@ export default function Hero({ onNavigate }) {
                 2+
               </div>
               <div className="text-[11px] sm:text-[13px] font-mono tracking-wider sm:tracking-widest text-slate-300 font-bold uppercase pt-1">
-                EXP_YEARS
+                EXP YEARS
               </div>
             </div>
 
